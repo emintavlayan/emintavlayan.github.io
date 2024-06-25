@@ -70,7 +70,7 @@ strong {
 }
 
 .wrapper {
-  width:650px;
+  width:790px; // 650
   margin:0 auto;
   position:relative;
 }
@@ -198,7 +198,9 @@ header {
 
 #banner {
   z-index: 100;
-  left:0;
+  width: 790px; /* Adjusted to match the new section width */
+  left: 50%;
+  margin-left: -395px; /* Centering adjustment based on updated width */
   right:50%;
   height: 50px;
   margin-right:-382px;
@@ -305,7 +307,7 @@ nav {
   position: fixed;
   top: 220px;
   left:50%;
-  margin-left:-580px;
+  margin-left:-475px; //580
   text-align: right;
 
   ul {
@@ -380,6 +382,8 @@ footer {
     float:none;
 
     h1 {
+      width: 790px; /* Adjusted to match the new content width */
+      margin: 0 auto; /* Center horizontally */
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
