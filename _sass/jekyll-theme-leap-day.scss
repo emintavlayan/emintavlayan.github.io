@@ -70,7 +70,7 @@ strong {
 }
 
 .wrapper {
-  width:790px; // 650
+  width:650px;
   margin:0 auto;
   position:relative;
 }
@@ -198,9 +198,7 @@ header {
 
 #banner {
   z-index: 100;
-  width: 790px; /* Adjusted to match the new section width */
-  left: 50%;
-  margin-left: -395px; /* Centering adjustment based on updated width */
+  left:0;
   right:50%;
   height: 50px;
   margin-right:-382px;
@@ -287,7 +285,7 @@ header {
 }
 
 section {
-  width:790px; // 590
+  width:590px;
   padding: 30px 30px 50px 30px;
   margin: 20px 0;
   margin-top: 190px;
@@ -303,11 +301,11 @@ small {
 }
 
 nav {
-  width: 330px; // 230
+  width: 230px;
   position: fixed;
   top: 220px;
   left:50%;
-  margin-left:-475px; //580
+  margin-left:-580px;
   text-align: right;
 
   ul {
@@ -382,8 +380,6 @@ footer {
     float:none;
 
     h1 {
-      width: 790px; /* Adjusted to match the new content width */
-      margin: 0 auto; /* Center horizontally */
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
