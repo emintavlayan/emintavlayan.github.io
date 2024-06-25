@@ -2,6 +2,16 @@
 layout: default
 ---
 
+## Özet
+
+**Bölümünüze ait kısaltmalar**
+
+**Bölümünüzde kullandığınız Türkçe uyarlamalar**
+
+**Şekil Tanımlamaları**
+
+**Tablo Tanımlamaları**
+
 **Yazar ad & soyad & unvan & kurum:**
 
 * Cemile Ceylan
@@ -21,15 +31,6 @@ layout: default
 
 **Anahtar Kelime:** Lineer Hızlandırıcı, Halcyon, Kalite kontrol, Kalite Güvencesi, Radyoterapi
 
-## Özet
-
-**Bölümünüze ait kısaltmalar**
-
-**Bölümünüzde kullandığınız Türkçe uyarlamalar**
-
-**Şekil Tanımlamaları**
-
-**Tablo Tanımlamaları**
 
 ## 1. Giriş
 
