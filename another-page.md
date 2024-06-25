@@ -19,30 +19,32 @@ layout: default
 </div>
 
 ## Mekanik testler
-###Lazer kontrolu{: .daily .c-arm .o-ring}
+
+**Lazer kontrolu**{: .daily .c-arm .o-ring}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 
-###SSD kontrolu{: .daily .monthly .c-arm}
+**SSD kontrolu**{: .daily .monthly .c-arm}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 
-**Isik alan radyasyon alan uyumu** {: .monthly .yearly .c-arm}
+**Isik alan radyasyon alan uyumu**{: .monthly .yearly .c-arm}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 
-**Kapi interlock kontrolu** {: .daily .monthly .yearly .c-arm .o-ring}
+**Kapi interlock kontrolu**{: .daily .monthly .yearly .c-arm .o-ring}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 
 ## Dozimetrik testler
 ### Su fantomunun kurulmasi
-**Carm linaklarda normal sekilde kendi ayak mekanizmasi ile sabitlenir** {: .yearly .c-arm}
+
+**Carm linaklarda normal sekilde kendi ayak mekanizmasi ile sabitlenir**{: .yearly .c-arm}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 
-**Laserler ve alan isigi ile isocenter a yerlestirilir** {: .yearly .c-arm}
+**Laserler ve alan isigi ile isocenter a yerlestirilir**{: .yearly .c-arm}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 
-**Halcyon icin ayaklarindan kaldirilarak masa uzerine konur** {: .yearly .o-ring}
+**Halcyon icin ayaklarindan kaldirilarak masa uzerine konur**{: .yearly .o-ring}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 
-**Isocenter goruntuleme sistemleri ile bulunur** {: .yearly .o-ring}
+**Isocenter goruntuleme sistemleri ile bulunur**{: .yearly .o-ring}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 
 [back](./)
