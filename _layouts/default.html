@@ -13,7 +13,30 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+<style>
+    body {
+      font: 14px/22px 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .content {
+      width: 70%;
+      margin-left: 5%;
+    }
+    .sidebar {
+      width: 25%;
+    }
+    .toggle-btn {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+    .toggle-btn.active {
+      background-color: #007bff;
+      color: #fff;
+      border-color: #007bff;
+    }
+  </style>
     {% include head-custom.html %}
   </head>
   <body>
@@ -53,5 +76,42 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
       </footer>
     </div>
+    <script>
+    var activeFilters = {
+      frequency: '',
+      type: ''
+    };
+
+    function toggleFilter(button, category, filter) {
+      var buttons = button.parentElement.querySelectorAll('.toggle-btn');
+      buttons.forEach(function(btn) {
+        if (btn === button && !btn.classList.contains('active')) {
+          btn.classList.add('active');
+          activeFilters[category] = filter;
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      applyFilters();
+    }
+
+    function applyFilters() {
+      var elements = document.querySelectorAll('[data-tags]');
+
+      elements.forEach(function(element) {
+        var tags = element.getAttribute('data-tags').split(' ');
+        var show = true;
+
+        for (var key in activeFilters) {
+          if (activeFilters[key] && !tags.includes(activeFilters[key])) {
+            show = false;
+            break;
+          }
+        }
+
+        element.style.display = show ? '' : 'none';
+      });
+    }
+  </script>
   </body>
 </html>
