@@ -19,10 +19,10 @@ layout: default
 </div>
 
 ## Mekanik testler
-**Lazer kontrolu** {: .daily .c-arm .o-ring}
+###Lazer kontrolu{: .daily .c-arm .o-ring}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 
-**SSD kontrolu** {: .daily .monthly .c-arm}
+###SSD kontrolu{: .daily .monthly .c-arm}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 
 **Isik alan radyasyon alan uyumu** {: .monthly .yearly .c-arm}
