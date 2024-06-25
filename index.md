@@ -23,17 +23,17 @@ layout: default
 
 ## Özet
 
-### Bölümünüze ait kısaltmalar
+**Bölümünüze ait kısaltmalar**
 
-### Bölümünüzde kullandığınız Türkçe uyarlamalar
+** Bölümünüzde kullandığınız Türkçe uyarlamalar**
 
-### Şekil Tanımlamaları
+** Şekil Tanımlamaları**
 
-### Tablo Tanımlamaları
+** Tablo Tanımlamaları**
 
 ## 1. Giriş
 
-### Tanımlama (Raporun gelişim süreci anlatılacak)
+** Tanımlama (Raporun gelişim süreci anlatılacak)**
 
 Son 40 yılda daha etkin kanser tedavisi için Intensity Modulted Radiotherapy (IMRT), Stereotactic RadioSurgery (SRS) gibi klinik uygulamalarda farklı ve sofistike radyoterapi teknikleri gelişirken, bu uygulamaları gerçekleştirebilecek medikal amaçlı Lineer Hızlandırıcılar (Linak) da gelişen teknolojiye paralel olarak değişim ve gelişim gösterdiler. Bu değişimlerin başında Multileaf Kolimatör (MLC) sistemleri, Görüntü Kılavuzlu Radyoterapi’ye (Image Guided Radiotherapy, IGRT) olanak sağlayan Cone Beam Computed Tomography (CBCT), Kilovoltage (kV) görüntüleme ve Solunum Takipli Radyoterapi (Respiratory Gating) gibi bileşenler yer almaktadır.
 
@@ -42,14 +42,14 @@ Lineer hızlandırıcıyı (Linak) klinik olarak kullanmadan önce kabul testler
 ### 1.1. Amaç
 
 Linak KK testlerinin belirlenmesinde ve uygulanmasında şu amaçlar akılda tutulmalıdır:
-- Hastaya uygulanacak radyoterapinin en doğru ve güvenli şekilde uygulanması
-- Radyasyondan korunma kapsamında güvenli kullanılması
-- Ulusal, uluslararası ya da Linak Kabul testleri tolerans değerlerinde çalışabilir olması
-- Ulusal hatta uluslararası standardizasyon sağlanabilmesi
+* Hastaya uygulanacak radyoterapinin en doğru ve güvenli şekilde uygulanması
+* Radyasyondan korunma kapsamında güvenli kullanılması
+* Ulusal, uluslararası ya da Linak Kabul testleri tolerans değerlerinde çalışabilir olması
+* Ulusal hatta uluslararası standardizasyon sağlanabilmesi
 
 Acceptance results in general can (and will) be used as baseline values for future QC, the requirements may be more stringent than employed during ongoing linear accelerator quality control. During the acceptance phase, focus will be on the technical and dosimetric aspects of the dose delivery but also safety checks like the handling of beam interruptions by the verification and control system are addressed.
 
-### 1.2. Lineer Hızlandırıcı Cihazları Kalite Kontrolünde Referans Düzey Olarak Kabul Edilecek Kabul Testleri
+### 1.2.  Referans Düzey Olarak Kabul Edilecek Kabul Testleri
 
 Cihaz özelinde Gökhanın gönderdiği referanslar dikkate alınarak referans düzeyin bu ve bazı spesifik testlerin kabul testlerinden hemen sonra yapılıp referans olarak alınması gerekliliği ve gelecekteki kalite güvencesinin bu dayanakların olacağı anlatılacak.
 
@@ -74,12 +74,12 @@ Test özelinde bahsedilecek: Lineer hızlandırıcılarda belirlenen zamanlamala
 
 (Maksimum 5 satırdan oluşan giriş yazısı...)
 
-#### Görüntüleme-Lineer Hızlandırıcı Merkezi Uyumu
+** Görüntüleme-Lineer Hızlandırıcı Merkezi Uyumu**
 Eş merkez uyumunu anlatan test kv mv cbct
 
 ### 2.3. Çok yapraklı Kolimatörler (ÇYK) MLC Testleri
 
-#### Haftalık
+** Haftalık**
 
 1. Picket fence testi
 2. Lif pozisyon doğruluğu
@@ -90,11 +90,11 @@ Eş merkez uyumunu anlatan test kv mv cbct
 7. Işın-ışıklı alan uyumu
 8. Dinamik IMRT plan testi
 
-### 2.4. Dozimetrik Testler
+** 2.4. Dozimetrik Testler**
 
 Dozimetrik kalite kontrol ölçüm yöntemleri; basit, hızlı ve referans ölçümler olan yıllık ölçümlerle karşılaştırılabilir şekilde oluşturulmalıdır. Yıllık olarak yapılan referans ölçümler genellikle su fantomunda gerçekleştirilirken, aylık ve günlük ölçümler için uygun ve pratik sistemler kullanılmalıdır. Özellikle günlük ölçümlerde kurulumu basit, hızlı ve referans koşullarda kararlılığı ve tekrarlanabilirliği yüksek sistemler kullanılmalıdır.
 
-#### Foton ve Elektron Output Sabitliği
+** Foton ve Elektron Output Sabitliği**
 
 **Amaç:**
 Foton ve elektron demetlerinin output sabitliğinin günlük doğrulaması, hastanın doğrulamanın yapıldığı günkü tedavi fraksiyonunda alacağı dozun, reçete edilen doza eşit olduğuna dair kontrolü sağlamak amacıyla, klinik kullanımda olan tüm foton ve elektron enerjileri için yapılması gerekli olan dozimetrik ölçümlerdir. Bu ölçümler, output kalibrasyonu anlamına gelmemekte olup, output’un kabul edilen tolerans aralığında değişmediğini doğrulamak amacıyla yapılmaktadır.
@@ -135,13 +135,13 @@ Solunum Takip
 ### 2.8. Halcyon Testleri
 Halcyon Tedavi Cihazı Kalite Güvencesi
 
-#### Güvenlik
+** Güvenlik**
 
-#### Dozimetrik
+** Dozimetrik**
 
-#### Mekanik
+** Mekanik**
 
-#### Görüntüleme
+** Görüntüleme**
 
 ### 2.9. Öneriler ve Sonuç
 Önerilen QA prosedürlerini ve ilgili toleransları ve eylem düzeylerinin dayanağını açıklamak
