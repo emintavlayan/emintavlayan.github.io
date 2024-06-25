@@ -20,10 +20,10 @@ layout: default
   </div>
 
   ## Mekanik testler 
-  <div data-tags="daily c-arm o-ring">
-    **Lazer kontrolu**
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.</p>
-  </div>
+  
+    **Lazer kontrolu** {: .daily .c-arm .o-ring}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
+
   <div data-tags="daily monthly c-arm">
     **SSD kontrolu**
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.</p>
