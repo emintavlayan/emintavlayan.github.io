@@ -4,16 +4,12 @@ layout: default
 
 ## Özet
 
+
 **Bölümünüze ait kısaltmalar**
-
 **Bölümünüzde kullandığınız Türkçe uyarlamalar**
-
 **Şekil Tanımlamaları**
-
 **Tablo Tanımlamaları**
-
 **Yazar ad & soyad & unvan & kurum:**
-
 * Cemile Ceylan
 * Zeynep Özen
 * Canan Köksal Akbaş
@@ -26,10 +22,8 @@ layout: default
 * Emin Tavlayan
 
 **Orcid ID:**
-
 **Kurum Adı:**
-
-**Anahtar Kelime:** Lineer Hızlandırıcı, Halcyon, Kalite kontrol, Kalite Güvencesi, Radyoterapi
+**Anahtar Kelimeler:** Lineer Hızlandırıcı, Halcyon, Kalite kontrol, Kalite Güvencesi, Radyoterapi
 
 
 ## 1. Giriş
