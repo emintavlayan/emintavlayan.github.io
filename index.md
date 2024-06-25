@@ -25,15 +25,15 @@ layout: default
 
 **Bölümünüze ait kısaltmalar**
 
-** Bölümünüzde kullandığınız Türkçe uyarlamalar**
+**Bölümünüzde kullandığınız Türkçe uyarlamalar**
 
-** Şekil Tanımlamaları**
+**Şekil Tanımlamaları**
 
-** Tablo Tanımlamaları**
+**Tablo Tanımlamaları**
 
 ## 1. Giriş
 
-** Tanımlama (Raporun gelişim süreci anlatılacak)**
+**Tanımlama (Raporun gelişim süreci anlatılacak)**
 
 Son 40 yılda daha etkin kanser tedavisi için Intensity Modulted Radiotherapy (IMRT), Stereotactic RadioSurgery (SRS) gibi klinik uygulamalarda farklı ve sofistike radyoterapi teknikleri gelişirken, bu uygulamaları gerçekleştirebilecek medikal amaçlı Lineer Hızlandırıcılar (Linak) da gelişen teknolojiye paralel olarak değişim ve gelişim gösterdiler. Bu değişimlerin başında Multileaf Kolimatör (MLC) sistemleri, Görüntü Kılavuzlu Radyoterapi’ye (Image Guided Radiotherapy, IGRT) olanak sağlayan Cone Beam Computed Tomography (CBCT), Kilovoltage (kV) görüntüleme ve Solunum Takipli Radyoterapi (Respiratory Gating) gibi bileşenler yer almaktadır.
 
@@ -74,13 +74,12 @@ Test özelinde bahsedilecek: Lineer hızlandırıcılarda belirlenen zamanlamala
 
 (Maksimum 5 satırdan oluşan giriş yazısı...)
 
-** Görüntüleme-Lineer Hızlandırıcı Merkezi Uyumu**
+**Görüntüleme-Lineer Hızlandırıcı Merkezi Uyumu**
 Eş merkez uyumunu anlatan test kv mv cbct
 
 ### 2.3. Çok yapraklı Kolimatörler (ÇYK) MLC Testleri
 
-** Haftalık**
-
+**Haftalık**
 1. Picket fence testi
 2. Lif pozisyon doğruluğu
 3. Lif hızı
@@ -90,11 +89,11 @@ Eş merkez uyumunu anlatan test kv mv cbct
 7. Işın-ışıklı alan uyumu
 8. Dinamik IMRT plan testi
 
-** 2.4. Dozimetrik Testler**
+### 2.4. Dozimetrik Testler
 
 Dozimetrik kalite kontrol ölçüm yöntemleri; basit, hızlı ve referans ölçümler olan yıllık ölçümlerle karşılaştırılabilir şekilde oluşturulmalıdır. Yıllık olarak yapılan referans ölçümler genellikle su fantomunda gerçekleştirilirken, aylık ve günlük ölçümler için uygun ve pratik sistemler kullanılmalıdır. Özellikle günlük ölçümlerde kurulumu basit, hızlı ve referans koşullarda kararlılığı ve tekrarlanabilirliği yüksek sistemler kullanılmalıdır.
 
-** Foton ve Elektron Output Sabitliği**
+**Foton ve Elektron Output Sabitliği**
 
 **Amaç:**
 Foton ve elektron demetlerinin output sabitliğinin günlük doğrulaması, hastanın doğrulamanın yapıldığı günkü tedavi fraksiyonunda alacağı dozun, reçete edilen doza eşit olduğuna dair kontrolü sağlamak amacıyla, klinik kullanımda olan tüm foton ve elektron enerjileri için yapılması gerekli olan dozimetrik ölçümlerdir. Bu ölçümler, output kalibrasyonu anlamına gelmemekte olup, output’un kabul edilen tolerans aralığında değişmediğini doğrulamak amacıyla yapılmaktadır.
@@ -135,21 +134,23 @@ Solunum Takip
 ### 2.8. Halcyon Testleri
 Halcyon Tedavi Cihazı Kalite Güvencesi
 
-** Güvenlik**
+**Güvenlik**
 
-** Dozimetrik**
+**Dozimetrik**
 
-** Mekanik**
+**Mekanik**
 
-** Görüntüleme**
+**Görüntüleme**
 
 ### 2.9. Öneriler ve Sonuç
+
 Önerilen QA prosedürlerini ve ilgili toleransları ve eylem düzeylerinin dayanağını açıklamak
 
 Stringent demands on tolerances for IMRT are also reflected on the measurement equipment used. It is important to stress the fact that measurement equipment should be able to perform (in terms of uncertainties, repeatability, and precision) within the tolerance or action level of the parameter to be measured. AAPM TG142 states "that the measurement system and procedure repeatability be such that two standard deviations for three or more repeated consecutive measurements are less than the tolerance value." This statement indicates the need of quality control on measurement tools and equipment. One should familiarize oneself with the suitability of its use (in terms of possibilities as well as limitations). For example, a functional acceptance test of the water phantom might be performed in order to assess the (mechanical) tolerances of the phantom. Besides investigating mechanical issues of the water phantom, try to determine (estimate) the influence of detector characteristics (in terms of signal-to-noise and leakage, effective point of measurement, stability and reproducibility) on the measurement uncertainty. The different dosimetric characteristics of different detectors should be balanced against the parameters needed for IMRT modelling. An ideal detector should have:
-- an excellent spatial resolution (small volume)
-- dose response which is independent of energy, dose and dose rate
-- excellent stability, linearity and reproducibility
+
+* an excellent spatial resolution (small volume)
+* dose response which is independent of energy, dose and dose rate
+* excellent stability, linearity and reproducibility
 
 Kullanılan dozimetrik sistemlerin ekipmanların ve fantomların güvenlik ile ilgili önerilerini de yaz. Kalibrasyon ulusal standartlara uygun şekilde kalibrasyona gönderilmeli. Aksiyon level tanımlamalarını unutma.
 
