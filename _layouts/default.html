@@ -36,6 +36,9 @@
       color: #fff;
       border-color: #007bff;
     }
+    .hidden {
+      display: none;
+    }
   </style>
     {% include head-custom.html %}
   </head>
@@ -96,14 +99,13 @@
     }
 
     function applyFilters() {
-      var elements = document.querySelectorAll('[data-tags]');
+      var elements = document.querySelectorAll('.daily, .monthly, .yearly, .c-arm, .o-ring');
 
       elements.forEach(function(element) {
-        var tags = element.getAttribute('data-tags').split(' ');
         var show = true;
-
+        
         for (var key in activeFilters) {
-          if (activeFilters[key] && !tags.includes(activeFilters[key])) {
+          if (activeFilters[key] && !element.classList.contains(activeFilters[key])) {
             show = false;
             break;
           }
