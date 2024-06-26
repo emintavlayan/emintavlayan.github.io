@@ -44,7 +44,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ant
 
 ### output kontrolu
 {: .daily .monthly .yearly .c-arm .o-ring}
-
 Gunluk output kontrolleri icin kullanimi kolay cihazlarla kontroller yapilabilir. Daily QA gibi cihazlarinin bilinen Iyon odasi olcumleri ile dogru bir sekilde Cross-Calibre edilmis oldugundan emin olunmalidir
 {: .daily .monthly .yearly .c-arm .o-ring}
 
