@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {% seo %}
+    <title>MFD-GG007</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
@@ -21,24 +23,7 @@
       width: 70%;
       margin-left: 5%;
     }
-    .sidebar {
-      width: 25%;
-    }
-    .toggle-btn {
-      padding: 10px;
-      margin: 5px;
-      border: 1px solid #ccc;
-      background-color: #f0f0f0;
-      cursor: pointer;
-    }
-    .toggle-btn.active {
-      background-color: #007bff;
-      color: #fff;
-      border-color: #007bff;
-    }
-    .hidden {
-      display: none;
-    }
+    
   </style>
     {% include head-custom.html %}
   </head>
@@ -73,6 +58,13 @@
 
       </section>
       <footer>
+        <div class="buttons has-addons is-centered" id="filter-buttons">
+          <button class="button is-link" data-filter="daily" onclick="toggleFilter(this, 'daily')">Daily</button>
+          <button class="button is-link" data-filter="monthly" onclick="toggleFilter(this, 'monthly')">Monthly</button>
+          <button class="button is-link" data-filter="yearly" onclick="toggleFilter(this, 'yearly')">Yearly</button>
+          <button class="button is-link" data-filter="c-arm" onclick="toggleFilter(this, 'c-arm')">C-Arm</button>
+          <button class="button is-link" data-filter="o-ring" onclick="toggleFilter(this, 'o-ring')">O-Ring</button>
+        </div>
         {% if site.github.is_project_page %}
           <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
@@ -80,40 +72,56 @@
       </footer>
     </div>
     <script>
+    <script>
     var activeFilters = {
       frequency: '',
       type: ''
     };
 
-    function toggleFilter(button, category, filter) {
-      var buttons = button.parentElement.querySelectorAll('.toggle-btn');
-      buttons.forEach(function(btn) {
-        if (btn === button && !btn.classList.contains('active')) {
-          btn.classList.add('active');
-          activeFilters[category] = filter;
+    function toggleFilter(button, filter) {
+      // Toggle the button's active state
+      if (button.classList.contains('is-active')) {
+        button.classList.remove('is-active');
+        if (filter === 'daily' || filter === 'monthly' || filter === 'yearly') {
+          activeFilters.frequency = '';
         } else {
-          btn.classList.remove('active');
+          activeFilters.type = '';
         }
-      });
+      } else {
+        // Deactivate other buttons in the same category
+        if (filter === 'daily' || filter === 'monthly' || filter === 'yearly') {
+          document.querySelectorAll('.button[data-filter="daily"], .button[data-filter="monthly"], .button[data-filter="yearly"]').forEach(btn => btn.classList.remove('is-active'));
+          activeFilters.frequency = filter;
+        } else {
+          document.querySelectorAll('.button[data-filter="c-arm"], .button[data-filter="o-ring"]').forEach(btn => btn.classList.remove('is-active'));
+          activeFilters.type = filter;
+        }
+        button.classList.add('is-active');
+      }
       applyFilters();
     }
 
     function applyFilters() {
       var elements = document.querySelectorAll('.daily, .monthly, .yearly, .c-arm, .o-ring');
-
       elements.forEach(function(element) {
         var show = true;
-        
         for (var key in activeFilters) {
           if (activeFilters[key] && !element.classList.contains(activeFilters[key])) {
             show = false;
             break;
           }
         }
-
         element.style.display = show ? '' : 'none';
       });
     }
+
+    function resetFilters() {
+      document.querySelectorAll('.button').forEach(btn => btn.classList.remove('is-active'));
+      activeFilters.frequency = '';
+      activeFilters.type = '';
+      applyFilters();
+    }
+  </script>
   </script>
   </body>
 </html>
