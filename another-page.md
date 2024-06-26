@@ -3,16 +3,24 @@ layout: default
 title: hello
 ---
 ## Interactive Test Sayfasi Deneme 
-<div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-    <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+<div class="btn-group btn-group-sm" role="group" aria-label="Frequency" style="margin: 10px; position: relative; z-index: 10;">
+  <input type="checkbox" class="btn-check" id="daily" autocomplete="off">
+  <label class="btn btn-outline-primary" for="daily">Daily</label>
 
-    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-    <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
+  <input type="checkbox" class="btn-check" id="monthly" autocomplete="off">
+  <label class="btn btn-outline-primary" for="monthly">Monthly</label>
 
-    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-    <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
-  </div>  
+  <input type="checkbox" class="btn-check" id="yearly" autocomplete="off">
+  <label class="btn btn-outline-primary" for="yearly">Yearly</label>
+</div>
+
+<div class="btn-group btn-group-sm" role="group" aria-label="Machine Type" style="margin: 10px; position: relative; z-index: 10;">
+  <input type="checkbox" class="btn-check" id="carm" autocomplete="off">
+  <label class="btn btn-outline-primary" for="carm">C-Arm</label>
+
+  <input type="checkbox" class="btn-check" id="oring" autocomplete="off">
+  <label class="btn btn-outline-primary" for="oring">O-Ring</label>
+</div>
 ## 1.Mekanik testler
 
 **Lazer kontrolu** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
