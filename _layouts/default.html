@@ -23,7 +23,19 @@
       width: 70%;
       margin-left: 5%;
     }
-     
+     .buttons {
+      justify-content: center;
+    }
+    .buttons .button {
+      margin: 2px;
+      background-color: #f0f0f0;
+      border-color: #ccc;
+    }
+    .buttons .button.is-active {
+      background-color: #FFCC00;
+      color: #fff;
+      border-color: #007bff;
+    }
   </style>
     {% include head-custom.html %}
   </head>
@@ -77,44 +89,32 @@
     </div>
     <script>
     var activeFilters = {
-      frequency: '',
-      type: ''
+      frequency: [],
+      type: []
     };
 
-    function toggleFilter(button, category, filter) {
-      var buttons = document.querySelectorAll('.buttons[data-filter=' + category + '] .button');
+    function toggleFilter(button, filter) {
+      const category = button.parentElement.id === 'frequency-buttons' ? 'frequency' : 'type';
+      
       // Toggle the button's active state
       if (button.classList.contains('is-active')) {
         button.classList.remove('is-active');
-        activeFilters[category] = '';
+        activeFilters[category] = activeFilters[category].filter(f => f !== filter);
       } else {
-        // Deactivate other buttons in the same category
-        buttons.forEach(btn => btn.classList.remove('is-active'));
-        activeFilters[category] = filter;
         button.classList.add('is-active');
+        activeFilters[category].push(filter);
       }
       applyFilters();
     }
 
     function applyFilters() {
-      var elements = document.querySelectorAll('.daily, .monthly, .yearly, .c-arm, .o-ring');
-      elements.forEach(function(element) {
-        var show = true;
-        for (var key in activeFilters) {
-          if (activeFilters[key] && !element.classList.contains(activeFilters[key])) {
-            show = false;
-            break;
-          }
-        }
-        element.style.display = show ? '' : 'none';
-      });
-    }
+      const elements = document.querySelectorAll('.daily, .monthly, .yearly, .c-arm, .o-ring');
 
-    function resetFilters() {
-      document.querySelectorAll('.button').forEach(btn => btn.classList.remove('is-active'));
-      activeFilters.frequency = '';
-      activeFilters.type = '';
-      applyFilters();
+      elements.forEach(element => {
+        const frequencyMatch = !activeFilters.frequency.length || activeFilters.frequency.some(f => element.classList.contains(f));
+        const typeMatch = !activeFilters.type.length || activeFilters.type.some(t => element.classList.contains(t));
+        element.style.display = (frequencyMatch && typeMatch) ? '' : 'none';
+      });
     }
   </script>
   </body>
