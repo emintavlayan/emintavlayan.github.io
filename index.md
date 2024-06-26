@@ -4,6 +4,7 @@ layout: default
 **.**
 ## Özet
 
+[Interactive Test Secimi Sayfasi](./another-page.html).
 
 **Bölümünüze ait kısaltmalar**
 **Bölümünüzde kullandığınız Türkçe uyarlamalar**
@@ -156,7 +157,6 @@ Kullanılan dozimetrik sistemlerin ekipmanların ve fantomların güvenlik ile i
 1.  Item three
 1.  Item four
 
-[Interactive Test Secimi Sayfasi](./another-page.html).
 
 
 
