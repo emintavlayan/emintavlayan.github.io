@@ -4,7 +4,7 @@ title: Medikal Fizik Dernegi - GG007
 ---
 
 ## Interactive Test Sayfasi Deneme 
-<div class="btn-group btn-group-sm" role="group" aria-label="Frequency" style="margin: 10px; position: relative; z-index: 10;">
+<div class="btn-group btn-group-sm" role="group" aria-label="Basic checkbox toggle button group Frequency" style="margin: 10px; position: relative; z-index: 10;">
   <input type="checkbox" class="btn-check" id="daily" autocomplete="off">
   <label class="btn btn-outline-primary" for="daily">Daily</label>
 
@@ -15,7 +15,7 @@ title: Medikal Fizik Dernegi - GG007
   <label class="btn btn-outline-primary" for="yearly">Yearly</label>
 </div>
 
-<div class="btn-group btn-group-sm" role="group" aria-label="Machine Type" style="margin: 10px; position: relative; z-index: 10;">
+<div class="btn-group btn-group-sm" role="group" aria-label="Basic checkbox toggle button group Machine Type" style="margin: 10px; position: relative; z-index: 10;">
   <input type="checkbox" class="btn-check" id="carm" autocomplete="off">
   <label class="btn btn-outline-primary" for="carm">C-Arm</label>
 

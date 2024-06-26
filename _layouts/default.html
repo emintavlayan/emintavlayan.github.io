@@ -27,23 +27,19 @@
       margin-left: 5%;
     }
 
-    .footer-btn-group {
-      margin: 10px;
-      position: relative;
-      z-index: 10;
-    }
+    
 
-    .footer-btn-group .btn {
-      background-color: rgb(251, 251, 251);
-      border-color: rgb(203, 203, 203);
-      color: rgb(57, 57, 57);
-    }
+    .btn-check + .btn-outline-primary {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
 
-    .footer-btn-group .btn-check:checked + .btn {
-      background-color: #FFCC00;
-      border-color: rgb(203, 203, 203);
-      color: rgb(57, 57, 57);
-    }
+.btn-check:checked + .btn-outline-primary {
+    color: #fff;
+    background-color: #007bff; /* Bootstrap primary blue */
+    border-color: #007bff;
+}
   </style>
   {% include head-custom.html %}
 </head>
