@@ -27,18 +27,22 @@
       margin-left: 5%;
     }
 
-    .btn-check:checked + .btn {
-      background-color: #FFCC00;
-      border-color: rgb(203, 203, 203);
-      color: rgb(57, 57, 57);
+    .footer-btn-group {
+      margin: 10px;
+      position: relative;
+      z-index: 10;
     }
-    .btn {
+
+    .footer-btn-group .btn {
       background-color: rgb(251, 251, 251);
       border-color: rgb(203, 203, 203);
       color: rgb(57, 57, 57);
     }
-    .btn-group {
-      margin: 10px;
+
+    .footer-btn-group .btn-check:checked + .btn {
+      background-color: #FFCC00;
+      border-color: rgb(203, 203, 203);
+      color: rgb(57, 57, 57);
     }
   </style>
   {% include head-custom.html %}
@@ -76,7 +80,7 @@
     </section>
     <footer>
       <!-- Frequency Button Group -->
-      <div class="btn-group btn-group-sm" role="group" aria-label="Frequency">
+      <div class="btn-group btn-group-sm footer-btn-group" role="group" aria-label="Frequency">
         <input type="checkbox" class="btn-check" id="daily" autocomplete="off">
         <label class="btn btn-outline-primary" for="daily">Daily</label>
     
@@ -88,7 +92,7 @@
       </div>
     
       <!-- Machine Type Button Group -->
-      <div class="btn-group btn-group-sm" role="group" aria-label="Machine Type">
+      <div class="btn-group btn-group-sm footer-btn-group" role="group" aria-label="Machine Type">
         <input type="checkbox" class="btn-check" id="carm" autocomplete="off">
         <label class="btn btn-outline-primary" for="carm">C-Arm</label>
     
