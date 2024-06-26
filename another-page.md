@@ -18,7 +18,7 @@ layout: default
   </div>
 </div>
 
-## Mekanik testler
+## 1.Mekanik testler
 
 **Lazer kontrolu**
 {: .daily .c-arm .o-ring}
@@ -40,12 +40,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ant
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .daily .monthly .yearly .c-arm .o-ring}
 
-## Dozimetrik testler
+## 2.Dozimetrik testler
 
-### output kontrolu
-{: .daily .monthly .yearly .c-arm .o-ring}
+### 2.1.Output kontrolu
+
 Gunluk output kontrolleri icin kullanimi kolay cihazlarla kontroller yapilabilir. Daily QA gibi cihazlarinin bilinen Iyon odasi olcumleri ile dogru bir sekilde Cross-Calibre edilmis oldugundan emin olunmalidir
-{: .daily .monthly .yearly .c-arm .o-ring}
+
 
 Aylik kontrollerde, output kontrolu iyon odasi ve kati fantomlarda pratik bir sekilde yapilabilir. Yine de SSDL ile takip edilen su icinde referans dozimetre olcumleri ile cross calibrasyon katsayilarinin dogrulugundan emin olunmalidir. yukarida bahsedilen gunluk output kontrolu icin kullanilan tum sistemlerin AYlik kontrol sirasinda halen uyumlu olduklari da test edilmelidir.
 {: .monthly .yearly .c-arm .o-ring}
@@ -53,8 +53,8 @@ Aylik kontrollerde, output kontrolu iyon odasi ve kati fantomlarda pratik bir se
 Yillik output kontrolleri, direkt olarak PSDL evya SSDL sertifikasi olan iyon odalari ile referans kosullarda gerceklestirilmelidir. Gunluk ve  Aylik kontrollerde kullanilan tum sistemler ve gerekli katsayilar yillik olcum sirasinda yeniden olculmeli ve teyit edilmelidir
 {: .yearly .c-arm .o-ring}
 
-### Su fantomunun kurulmasi
-{: .yearly .c-arm}
+### 2.2.Su fantomunun kurulmasi
+{: .yearly .c-arm .oring}
 
 **Carm linaklarda normal sekilde kendi ayak mekanizmasi ile sabitlenir**
 {: .yearly .c-arm}
@@ -66,7 +66,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ant
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .yearly .c-arm}
 
-**Halcyon icin ayaklarindan kaldirilarak masa uzerine konur**
+**Halcyon icin ayaklarindan kaldirilarak direkt masa uzerine konulur**
 {: .yearly .o-ring}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .yearly .o-ring}
