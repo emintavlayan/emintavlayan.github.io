@@ -8,7 +8,7 @@
   {% seo %}
   <title>MFD-GG007</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-5K+X/rfQQEowu9akWVNCWuPT2dDnvM5awLgKXv5y5l2bc1AX0mRz5JCo0+5RQ5E9" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.3.0.min.js"
     integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
@@ -27,16 +27,16 @@
       margin-left: 5%;
     }
 
-    .btn-custom {
+    .btn-check:checked + .btn {
+      background-color: #FFCC00;
+      border-color: rgb(203, 203, 203);
       color: rgb(57, 57, 57);
+    }
+    .btn {
       background-color: rgb(251, 251, 251);
       border-color: rgb(203, 203, 203);
-    }
-
-    .btn-custom.active {
-      background-color: #FFCC00;
       color: rgb(57, 57, 57);
-      border-color: rgb(203, 203, 203);
+    }
   </style>
   {% include head-custom.html %}
 </head>
@@ -73,27 +73,26 @@
     </section>
     <footer>
       <!-- Frequency Button Group -->
-      <div class="btn-group-toggle d-flex justify-content-around mb-3" data-toggle="buttons">
-        <label class="btn btn-custom flex-fill">
-          <input type="checkbox" autocomplete="off" class="filter-btn" data-filter="daily"> Daily
-        </label>
-        <label class="btn btn-custom flex-fill">
-          <input type="checkbox" autocomplete="off" class="filter-btn" data-filter="monthly"> Monthly
-        </label>
-        <label class="btn btn-custom flex-fill">
-          <input type="checkbox" autocomplete="off" class="filter-btn" data-filter="yearly"> Yearly
-        </label>
+      <div class="btn-group btn-group-sm" role="group" aria-label="Frequency">
+        <input type="checkbox" class="btn-check" id="daily" autocomplete="off">
+        <label class="btn btn-outline-primary" for="daily">Daily</label>
+      
+        <input type="checkbox" class="btn-check" id="monthly" autocomplete="off">
+        <label class="btn btn-outline-primary" for="monthly">Monthly</label>
+      
+        <input type="checkbox" class="btn-check" id="yearly" autocomplete="off">
+        <label class="btn btn-outline-primary" for="yearly">Yearly</label>
       </div>
-
+      
       <!-- Machine Type Button Group -->
-      <div class="btn-group-toggle d-flex justify-content-around mb-3" data-toggle="buttons">
-        <label class="btn btn-custom flex-fill">
-          <input type="checkbox" autocomplete="off" class="filter-btn" data-filter="c-arm"> C-Arm
-        </label>
-        <label class="btn btn-custom flex-fill">
-          <input type="checkbox" autocomplete="off" class="filter-btn" data-filter="o-ring"> O-Ring
-        </label>
+      <div class="btn-group btn-group-sm" role="group" aria-label="Machine Type">
+        <input type="checkbox" class="btn-check" id="carm" autocomplete="off">
+        <label class="btn btn-outline-primary" for="carm">C-Arm</label>
+      
+        <input type="checkbox" class="btn-check" id="oring" autocomplete="off">
+        <label class="btn btn-outline-primary" for="oring">O-Ring</label>
       </div>
+     
       {% if site.github.is_project_page %}
       <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
       {% endif %}
@@ -101,36 +100,43 @@
       </p>
     </footer>
   </div>
-  <script src="/assets/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      filterButtons.forEach(button => {
-        button.addEventListener('change', function() {
-          const filter = this.dataset.filter;
-          const isActive = this.checked;
-          const filterElements = document.querySelectorAll(`.${filter}`);
-          
-          if (isActive) {
-            filterElements.forEach(el => el.style.display = 'block');
-          } else {
-            filterElements.forEach(el => el.style.display = 'none');
-          }
-
-          const activeFilters = Array.from(filterButtons).filter(btn => btn.checked).map(btn => btn.dataset.filter);
-          const allElements = document.querySelectorAll('.content p');
-          allElements.forEach(el => el.style.display = 'none');
-
-          if (activeFilters.length === 0) {
-            allElements.forEach(el => el.style.display = 'block');
-          } else {
-            activeFilters.forEach(filter => {
-              document.querySelectorAll(`.${filter}`).forEach(el => el.style.display = 'block');
-            });
-            document.querySelectorAll('.content p:not([class])').forEach(el => el.style.display = 'block');
-          }
+    document.addEventListener('DOMContentLoaded', function () {
+      const buttons = document.querySelectorAll('.btn-check');
+      buttons.forEach(button => {
+        button.addEventListener('change', function () {
+          filterContent();
         });
       });
+
+      function filterContent() {
+        const dailyChecked = document.getElementById('daily').checked;
+        const monthlyChecked = document.getElementById('monthly').checked;
+        const yearlyChecked = document.getElementById('yearly').checked;
+        const carmChecked = document.getElementById('carm').checked;
+        const oringChecked = document.getElementById('oring').checked;
+
+        const items = document.querySelectorAll('.item'); // Assuming your items have a class 'item'
+
+        items.forEach(item => {
+          const isDaily = item.classList.contains('daily');
+          const isMonthly = item.classList.contains('monthly');
+          const isYearly = item.classList.contains('yearly');
+          const isCarm = item.classList.contains('carm');
+          const isOring = item.classList.contains('oring');
+
+          let show = (!dailyChecked && !monthlyChecked && !yearlyChecked) || 
+                     (dailyChecked && isDaily) || 
+                     (monthlyChecked && isMonthly) || 
+                     (yearlyChecked && isYearly);
+
+          show = show && ((!carmChecked && !oringChecked) || 
+                          (carmChecked && isCarm) || 
+                          (oringChecked && isOring));
+
+          item.style.display = show ? '' : 'none';
+        });
+      }
     });
   </script>
 </body>
