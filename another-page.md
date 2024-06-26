@@ -1,7 +1,7 @@
 ---
 layout: default
+title: hello
 ---
-**.**
 ## Interactive Test Sayfasi Deneme 
 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
     <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
