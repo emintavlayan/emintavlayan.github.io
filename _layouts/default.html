@@ -66,13 +66,17 @@
 
       </section>
       <footer>
-        <div class="buttons has-addons is-centered" id="filter-buttons">
-          <button class="button is-link" data-filter="daily" onclick="toggleFilter(this, 'daily')">Daily</button>
-          <button class="button is-link" data-filter="monthly" onclick="toggleFilter(this, 'monthly')">Monthly</button>
-          <button class="button is-link" data-filter="yearly" onclick="toggleFilter(this, 'yearly')">Yearly</button>
-          <button class="button is-link" data-filter="c-arm" onclick="toggleFilter(this, 'c-arm')">C-Arm</button>
-          <button class="button is-link" data-filter="o-ring" onclick="toggleFilter(this, 'o-ring')">O-Ring</button>
-        </div>
+        <div class="footer">
+    <div class="buttons has-addons is-centered" id="frequency-buttons">
+      <button class="button is-link" data-filter="daily" onclick="toggleFilter(this, 'frequency', 'daily')">Daily</button>
+      <button class="button is-link" data-filter="monthly" onclick="toggleFilter(this, 'frequency', 'monthly')">Monthly</button>
+      <button class="button is-link" data-filter="yearly" onclick="toggleFilter(this, 'frequency', 'yearly')">Yearly</button>
+    </div>
+    <div class="buttons has-addons is-centered" id="type-buttons">
+      <button class="button is-link" data-filter="c-arm" onclick="toggleFilter(this, 'type', 'c-arm')">C-Arm</button>
+      <button class="button is-link" data-filter="o-ring" onclick="toggleFilter(this, 'type', 'o-ring')">O-Ring</button>
+    </div>
+  </div>
         {% if site.github.is_project_page %}
           <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
@@ -80,30 +84,21 @@
       </footer>
     </div>
     <script>
-    <script>
     var activeFilters = {
       frequency: '',
       type: ''
     };
 
-    function toggleFilter(button, filter) {
+    function toggleFilter(button, category, filter) {
+      var buttons = document.querySelectorAll('.buttons[data-filter=' + category + '] .button');
       // Toggle the button's active state
       if (button.classList.contains('is-active')) {
         button.classList.remove('is-active');
-        if (filter === 'daily' || filter === 'monthly' || filter === 'yearly') {
-          activeFilters.frequency = '';
-        } else {
-          activeFilters.type = '';
-        }
+        activeFilters[category] = '';
       } else {
         // Deactivate other buttons in the same category
-        if (filter === 'daily' || filter === 'monthly' || filter === 'yearly') {
-          document.querySelectorAll('.button[data-filter="daily"], .button[data-filter="monthly"], .button[data-filter="yearly"]').forEach(btn => btn.classList.remove('is-active'));
-          activeFilters.frequency = filter;
-        } else {
-          document.querySelectorAll('.button[data-filter="c-arm"], .button[data-filter="o-ring"]').forEach(btn => btn.classList.remove('is-active'));
-          activeFilters.type = filter;
-        }
+        buttons.forEach(btn => btn.classList.remove('is-active'));
+        activeFilters[category] = filter;
         button.classList.add('is-active');
       }
       applyFilters();
@@ -129,7 +124,6 @@
       activeFilters.type = '';
       applyFilters();
     }
-  </script>
   </script>
   </body>
 </html>
