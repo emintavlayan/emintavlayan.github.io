@@ -70,6 +70,17 @@
     {% endif %}
   </div><!-- end banner -->
 
+  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+
+    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
+
+    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
+  </div>  
+
   <div class="wrapper">
     <nav>
       <ul></ul>
@@ -79,27 +90,6 @@
 
     </section>
     <footer>
-      <!-- Frequency Button Group -->
-      <div class="btn-group btn-group-sm footer-btn-group" role="group" aria-label="Frequency">
-        <input type="checkbox" class="btn-check" id="daily" autocomplete="off">
-        <label class="btn btn-outline-primary" for="daily">Daily</label>
-    
-        <input type="checkbox" class="btn-check" id="monthly" autocomplete="off">
-        <label class="btn btn-outline-primary" for="monthly">Monthly</label>
-    
-        <input type="checkbox" class="btn-check" id="yearly" autocomplete="off">
-        <label class="btn btn-outline-primary" for="yearly">Yearly</label>
-      </div>
-    
-      <!-- Machine Type Button Group -->
-      <div class="btn-group btn-group-sm footer-btn-group" role="group" aria-label="Machine Type">
-        <input type="checkbox" class="btn-check" id="carm" autocomplete="off">
-        <label class="btn btn-outline-primary" for="carm">C-Arm</label>
-    
-        <input type="checkbox" class="btn-check" id="oring" autocomplete="off">
-        <label class="btn btn-outline-primary" for="oring">O-Ring</label>
-      </div>
-      
       
      
       {% if site.github.is_project_page %}
