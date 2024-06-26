@@ -1,22 +1,8 @@
 ---
 layout: default
 ---
-**.**
+** **
 ## Interactive Test Sayfasi Deneme 
-
-<div id="filter-buttons-section1">
-  <div>
-    <span>Frequency:</span>
-    <button class="toggle-btn" data-filter="daily" onclick="toggleFilter(this, 'frequency', 'daily')">Daily</button>
-    <button class="toggle-btn" data-filter="monthly" onclick="toggleFilter(this, 'frequency', 'monthly')">Monthly</button>
-    <button class="toggle-btn" data-filter="yearly" onclick="toggleFilter(this, 'frequency', 'yearly')">Yearly</button>
-  </div>
-  <div>
-    <span>LINAC Type:</span>
-    <button class="toggle-btn" data-filter="c-arm" onclick="toggleFilter(this, 'type', 'c-arm')">C-Arm</button>
-    <button class="toggle-btn" data-filter="o-ring" onclick="toggleFilter(this, 'type', 'o-ring')">O-Ring</button>
-  </div>
-</div>
 
 ## 1.Mekanik testler
 
