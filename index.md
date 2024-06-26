@@ -2,7 +2,7 @@
 layout: default
 title: Medikal Fizik Dernegi - GG007
 ---
-**.**
+
 ## Özet
 
 [Interactive Test Secimi Sayfasi](./another-page.html).
