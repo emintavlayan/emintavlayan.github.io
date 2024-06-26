@@ -6,24 +6,16 @@ layout: default
 
 ## 1.Mekanik testler
 
-**Lazer kontrolu**
-{: .daily .c-arm .o-ring}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
+**Lazer kontrolu** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
 {: .daily .c-arm .o-ring}
 
-**SSD kontrolu**
-{: .daily .monthly .c-arm}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
+**SSD kontrolu** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
 {: .daily .monthly .c-arm}
 
-**Isik alan radyasyon alan uyumu**
-{: .monthly .yearly .c-arm}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus.
+**Isik alan radyasyon alan uyumu** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus.
 {: .monthly .yearly .c-arm}
 
-**Kapi interlock kontrolu**
-{: .daily .monthly .yearly .c-arm .o-ring}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
+**Kapi interlock kontrolu** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
 {: .daily .monthly .yearly .c-arm .o-ring}
 
 ## 2.Dozimetrik testler
