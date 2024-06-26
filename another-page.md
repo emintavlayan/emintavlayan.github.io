@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-** **
+**.**
 ## Interactive Test Sayfasi Deneme 
 
 ## 1.Mekanik testler
