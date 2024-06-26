@@ -53,7 +53,7 @@ Yillik output kontrolleri, direkt olarak PSDL evya SSDL sertifikasi olan iyon od
 {: .yearly .c-arm .o-ring}
 
 ### 2.2.Su fantomunun kurulmasi
-{: .yearly .c-arm .oring}
+{: .yearly .c-arm .o-ring}
 
 **Carm linaklarda normal sekilde kendi ayak mekanizmasi ile sabitlenir**
 {: .yearly .c-arm}
