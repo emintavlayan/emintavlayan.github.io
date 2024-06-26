@@ -103,40 +103,32 @@
   </div>
   <script src="/assets/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
       const filterButtons = document.querySelectorAll('.filter-btn');
-
-      function updateVisibility() {
-        const activeFilters = Array.from(filterButtons)
-          .filter(btn => btn.checked)
-          .map(btn => btn.dataset.filter);
-
-        const allElements = document.querySelectorAll('.content p');
-        allElements.forEach(el => el.style.display = 'none');
-
-        if (activeFilters.length === 0) {
-          allElements.forEach(el => el.style.display = 'block');
-        } else {
-          activeFilters.forEach(filter => {
-            document.querySelectorAll(`.${filter}`).forEach(el => el.style.display = 'block');
-          });
-          document.querySelectorAll('.content p:not([class])').forEach(el => el.style.display = 'block');
-        }
-      }
-
       filterButtons.forEach(button => {
-        button.addEventListener('change', function () {
+        button.addEventListener('change', function() {
           const filter = this.dataset.filter;
           const isActive = this.checked;
           const filterElements = document.querySelectorAll(`.${filter}`);
-
+          
           if (isActive) {
             filterElements.forEach(el => el.style.display = 'block');
           } else {
             filterElements.forEach(el => el.style.display = 'none');
           }
 
-          updateVisibility();
+          const activeFilters = Array.from(filterButtons).filter(btn => btn.checked).map(btn => btn.dataset.filter);
+          const allElements = document.querySelectorAll('.content p');
+          allElements.forEach(el => el.style.display = 'none');
+
+          if (activeFilters.length === 0) {
+            allElements.forEach(el => el.style.display = 'block');
+          } else {
+            activeFilters.forEach(filter => {
+              document.querySelectorAll(`.${filter}`).forEach(el => el.style.display = 'block');
+            });
+            document.querySelectorAll('.content p:not([class])').forEach(el => el.style.display = 'block');
+          }
         });
       });
     });
