@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Medikal Fizik Dernegi - GG007
 ---
 **.**
 ## Özet

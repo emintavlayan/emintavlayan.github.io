@@ -1,6 +1,6 @@
 ---
 layout: default
-title: hello
+title: Medikal Fizik Dernegi - GG007
 ---
 ## Interactive Test Sayfasi Deneme 
 <div class="btn-group btn-group-sm" role="group" aria-label="Frequency" style="margin: 10px; position: relative; z-index: 10;">
