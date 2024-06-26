@@ -20,25 +20,30 @@ layout: default
 
 ## Mekanik testler
 
-**Lazer kontrolu**{: .daily .c-arm .o-ring}
+**Lazer kontrolu**
+{: .daily .c-arm .o-ring}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .daily .c-arm .o-ring}
 
-**SSD kontrolu**{: .daily .monthly .c-arm}
+**SSD kontrolu**
+{: .daily .monthly .c-arm}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .daily .monthly .c-arm}
 
 **Isik alan radyasyon alan uyumu**
+{: .monthly .yearly .c-arm}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .monthly .yearly .c-arm}
 
 **Kapi interlock kontrolu**
+{: .daily .monthly .yearly .c-arm .o-ring}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .daily .monthly .yearly .c-arm .o-ring}
 
 ## Dozimetrik testler
 
-### output kontrolu{: .daily .monthly .yearly .c-arm .o-ring}
+### output kontrolu
+{: .daily .monthly .yearly .c-arm .o-ring}
 
 Gunluk output kontrolleri icin kullanimi kolay cihazlarla kontroller yapilabilir. Daily QA gibi cihazlarinin bilinen Iyon odasi olcumleri ile dogru bir sekilde Cross-Calibre edilmis oldugundan emin olunmalidir
 {: .daily .monthly .yearly .c-arm .o-ring}
@@ -49,21 +54,26 @@ Aylik kontrollerde, output kontrolu iyon odasi ve kati fantomlarda pratik bir se
 Yillik output kontrolleri, direkt olarak PSDL evya SSDL sertifikasi olan iyon odalari ile referans kosullarda gerceklestirilmelidir. Gunluk ve  Aylik kontrollerde kullanilan tum sistemler ve gerekli katsayilar yillik olcum sirasinda yeniden olculmeli ve teyit edilmelidir
 {: .yearly .c-arm .o-ring}
 
-### Su fantomunun kurulmasi{: .yearly .c-arm}
+### Su fantomunun kurulmasi
+{: .yearly .c-arm}
 
-**Carm linaklarda normal sekilde kendi ayak mekanizmasi ile sabitlenir**{: .yearly .c-arm}
+**Carm linaklarda normal sekilde kendi ayak mekanizmasi ile sabitlenir**
+{: .yearly .c-arm}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .yearly .c-arm}
 
-**Laserler ve alan isigi ile isocenter a yerlestirilir**{: .yearly .c-arm}
+**Laserler ve alan isigi ile isocenter a yerlestirilir**
+{: .yearly .c-arm}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .yearly .c-arm}
 
-**Halcyon icin ayaklarindan kaldirilarak masa uzerine konur**{: .yearly .o-ring}
+**Halcyon icin ayaklarindan kaldirilarak masa uzerine konur**
+{: .yearly .o-ring}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .yearly .o-ring}
 
-**Isocenter goruntuleme sistemleri ile bulunur**{: .yearly .o-ring}
+**Isocenter goruntuleme sistemleri ile bulunur**
+{: .yearly .o-ring}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. Maecenas efficitur venenatis feugiat. Phasellus vitae velit sed quam gravida scelerisque ac non arcu. Pellentesque efficitur nibh sit amet lectus dignissim mollis. Pellentesque pellentesque vehicula leo, at dictum ligula vestibulum ac.
 {: .yearly .o-ring}
 
