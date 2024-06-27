@@ -4,9 +4,10 @@ title: Medikal Fizik Dernegi - GG007
 ---
 
 ## Interactive Test Sayfasi Deneme 
+
 <div class="btn-group btn-group-sm" role="group" aria-label="Basic checkbox toggle button group Frequency" style="margin: 10px; position: relative; z-index: 10;">
   <input type="checkbox" class="btn-check" id="daily" autocomplete="off">
-  <label class="btn btn-outline-primary" for="daily">Daily</label>
+  <label class="btn btn-outline-primary" for="daily1">Daily</label>
 
   <input type="checkbox" class="btn-check" id="monthly" autocomplete="off">
   <label class="btn btn-outline-primary" for="monthly">Monthly</label>
@@ -22,6 +23,7 @@ title: Medikal Fizik Dernegi - GG007
   <input type="checkbox" class="btn-check" id="oring" autocomplete="off">
   <label class="btn btn-outline-primary" for="oring">O-Ring</label>
 </div>
+
 ## 1.Mekanik testler
 
 **Lazer kontrolu** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
@@ -51,24 +53,16 @@ Yillik output kontrolleri, direkt olarak PSDL evya SSDL sertifikasi olan iyon od
 ### 2.2.Su fantomunun kurulmasi
 {: .yearly .c-arm .o-ring}
 
-**Carm linaklarda normal sekilde kendi ayak mekanizmasi ile sabitlenir**
-{: .yearly .c-arm}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
+**Carm linaklarda normal sekilde kendi ayak mekanizmasi ile sabitlenir** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
 {: .yearly .c-arm}
 
-**Laserler ve alan isigi ile isocenter a yerlestirilir**
-{: .yearly .c-arm}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
+**Laserler ve alan isigi ile isocenter a yerlestirilir** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
 {: .yearly .c-arm}
 
-**Halcyon icin ayaklarindan kaldirilarak direkt masa uzerine konulur**
-{: .yearly .o-ring}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
+**Halcyon icin ayaklarindan kaldirilarak direkt masa uzerine konulur** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
 {: .yearly .o-ring}
 
-**Isocenter goruntuleme sistemleri ile bulunur**
-{: .yearly .o-ring}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
+**Isocenter goruntuleme sistemleri ile bulunur** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
 {: .yearly .o-ring}
 
 [back](./)
