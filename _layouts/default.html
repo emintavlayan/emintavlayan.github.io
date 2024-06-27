@@ -7,9 +7,11 @@
 
   {% seo %}
   <title>MFD-GG007</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-5K+X/rfQQEowu9akWVNCWuPT2dDnvM5awLgKXv5y5l2bc1AX0mRz5JCo0+5RQ5E9" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ '../assets/css/style.css? | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap">
+
   <script src="https://code.jquery.com/jquery-3.3.0.min.js"
     integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
@@ -74,6 +76,25 @@
       {{ content }}
     </section>
     <footer>
+      <div class="btn-group btn-group-sm" role="group" aria-label="Basic checkbox toggle button group Frequency" style="margin: 10px; position: relative; z-index: 10;">
+        <input type="checkbox" class="btn-check" id="daily" autocomplete="off">
+        <label class="btn btn-outline-primary" for="daily">Daily10</label>
+        </br>
+        <input type="checkbox" class="btn-check" id="monthly" autocomplete="off">
+        <label class="btn btn-outline-primary" for="monthly">Monthly</label>
+        </br>
+        <input type="checkbox" class="btn-check" id="yearly" autocomplete="off">
+        <label class="btn btn-outline-primary" for="yearly">Yearly</label>
+      </div>
+      <p>---</p>
+      <div class="btn-group btn-group-sm" role="group" aria-label="Basic checkbox toggle button group Machine Type" style="margin: 10px; position: relative; z-index: 10;">
+        <input type="checkbox" class="btn-check" id="carm" autocomplete="off">
+        <label class="btn btn-outline-primary" for="carm">C-Arm</label>
+        </br>
+        <input type="checkbox" class="btn-check" id="oring" autocomplete="off">
+        <label class="btn btn-outline-primary" for="oring">O-Ring</label>
+      </div>
+      
       {% if site.github.is_project_page %}
       <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
       {% endif %}

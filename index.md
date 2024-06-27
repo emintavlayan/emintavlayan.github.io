@@ -5,7 +5,7 @@ title: Medikal Fizik Dernegi - GG007
 
 ## Özet
 
-[Interactive Test Secimi Sayfasi](./another-page.html).
+[Interactive Test Secimi Sayfasi](./interactive.html).
 
 **Bölümünüze ait kısaltmalar**
 **Bölümünüzde kullandığınız Türkçe uyarlamalar**
