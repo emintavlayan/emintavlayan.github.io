@@ -7,7 +7,7 @@ title: Medikal Fizik Dernegi - GG007
 
 <div class="btn-group btn-group-sm" role="group" aria-label="Basic checkbox toggle button group Frequency" style="margin: 10px; position: relative; z-index: 10;">
   <input type="checkbox" class="btn-check" id="daily" autocomplete="off">
-  <label class="btn btn-outline-primary" for="daily">Daily1</label>
+  <label class="btn btn-outline-primary" for="daily">Daily10</label>
 
   <input type="checkbox" class="btn-check" id="monthly" autocomplete="off">
   <label class="btn btn-outline-primary" for="monthly">Monthly</label>
