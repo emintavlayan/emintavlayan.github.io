@@ -306,7 +306,7 @@ nav {
   top: 220px;
   left:50%;
   margin-left:-580px;
-  text-align: right;
+  text-align: left; //right
 
   ul {
     list-style: none;
@@ -348,20 +348,20 @@ nav {
       &:hover { color: #999; }
     }
 
-    // .active {
-    //   border-right:solid 4px #39C;
-    //   padding-right:13px;
-    // }
+    .active {
+      border-right:solid 4px #39C;
+      padding-right:13px;
+    }
   }
 }
 
 footer {
-  width:180px;
+  width:230px; //180
   position: fixed;
   left:50%;
-  margin-left:-530px;
+  margin-left:-580px;
   bottom:20px;
-  text-align: right;
+  text-align: left; //right
   line-height: 16px;
 }
 
