@@ -83,6 +83,11 @@
               return document.getElementById(checkboxId).checked;
           }
       
+          // Determine if any checkboxes are checked
+          function anyChecked() {
+              return document.querySelectorAll('.newCheckbox-group input[type="checkbox"]:checked').length > 0;
+          }
+      
           // Update visibility of all elements within the 'wrapper' div based on the checkbox state
           function updateVisibility() {
               // Store boolean values for each checkbox
@@ -94,23 +99,30 @@
       
               console.log("Checkbox states - Daily: ", isDailyChecked, "Monthly: ", isMonthlyChecked, "Yearly: ", isYearlyChecked, "C-Arm: ", isCarmChecked, "O-Ring: ", isOringChecked);
       
+              // If no checkboxes are checked, display all elements
+              const allChecked = anyChecked();
+      
               // Filter all child elements of the wrapper div based on the checkboxes
               document.querySelectorAll('.wrapper *').forEach(element => {
-                  const hasDaily = element.classList.contains('daily');
-                  const hasMonthly = element.classList.contains('monthly');
-                  const hasYearly = element.classList.contains('yearly');
-                  const hasCarm = element.classList.contains('carm');
-                  const hasOring = element.classList.contains('oring');
+                  if (!allChecked) {
+                      element.style.display = ''; // Reset display to default if no checkboxes are checked
+                  } else {
+                      const hasDaily = element.classList.contains('daily');
+                      const hasMonthly = element.classList.contains('monthly');
+                      const hasYearly = element.classList.contains('yearly');
+                      const hasCarm = element.classList.contains('carm');
+                      const hasOring = element.classList.contains('oring');
       
-                  // Determine visibility based on checkbox states
-                  const isVisible = (hasDaily && isDailyChecked) || 
-                                    (hasMonthly && isMonthlyChecked) || 
-                                    (hasYearly && isYearlyChecked) || 
-                                    (hasCarm && isCarmChecked) || 
-                                    (hasOring && isOringChecked) ||
-                                    (!hasDaily && !hasMonthly && !hasYearly && !hasCarm && !hasOring);
+                      // Determine visibility based on checkbox states
+                      const isVisible = (hasDaily && isDailyChecked) || 
+                                        (hasMonthly && isMonthlyChecked) || 
+                                        (hasYearly && isYearlyChecked) || 
+                                        (hasCarm && isCarmChecked) || 
+                                        (hasOring && isOringChecked) ||
+                                        (!hasDaily && !hasMonthly && !hasYearly && !hasCarm && !hasOring);
       
-                  element.style.display = isVisible ? '' : 'none';  // Use default display style when visible
+                      element.style.display = isVisible ? '' : 'none';
+                  }
               });
           }
       
@@ -126,6 +138,7 @@
           updateVisibility();
       });
       </script>
+      
       
       
       
