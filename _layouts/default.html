@@ -78,65 +78,50 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-          console.log("-->DOM fully loaded and parsed");
+          console.log("DOM fully loaded and parsed");
       
-          // Gather all checkboxes in the specified groups
           const checkboxes = document.querySelectorAll('.newCheckbox-group input[type="checkbox"]');
-          console.log("-->Found checkboxes: ", checkboxes.length);
-      
-          if (checkboxes.length === 0) {
-              console.log("-->Error: No checkboxes found. Check your HTML markup.");
-          }
+          console.log("Found checkboxes: ", checkboxes.length);
       
           function updateVisibility() {
               const frequencyFilters = new Set();
               const machineTypeFilters = new Set();
       
-              // Collect all checked frequency checkboxes
               document.querySelectorAll('#frequency .newCheckbox-group input:checked').forEach(input => {
                   frequencyFilters.add(input.value.toLowerCase());
-                  console.log("-->Added to frequencyFilters: ", input.value);
+                  console.log("Added to frequencyFilters: ", input.value);
               });
       
-              // Collect all checked machine type checkboxes
               document.querySelectorAll('#machine_type .newCheckbox-group input:checked').forEach(input => {
                   machineTypeFilters.add(input.value.toLowerCase());
-                  console.log("-->Added to machineTypeFilters: ", input.value);
+                  console.log("Added to machineTypeFilters: ", input.value);
               });
       
-              console.log("-->Current Frequency Filters: ", Array.from(frequencyFilters));
-              console.log("-->Current Machine Type Filters: ", Array.from(machineTypeFilters));
+              console.log("Current Frequency Filters: ", Array.from(frequencyFilters));
+              console.log("Current Machine Type Filters: ", Array.from(machineTypeFilters));
       
-              // Select all paragraph tags within the section for filtering
-              const paragraphs = document.querySelectorAll('section p');
-              console.log("-->Found paragraphs for filtering: ", paragraphs.length);
-      
-              if (paragraphs.length === 0) {
-                  console.log("-->Error: No paragraphs found within the section. Check your HTML markup.");
-              }
-      
-              paragraphs.forEach(p => {
+              document.querySelectorAll('section p').forEach(p => {
                   const isVisible = (p) => {
                       const frequencies = Array.from(p.classList).filter(cls => ['daily', 'monthly', 'yearly'].includes(cls));
                       const machines = Array.from(p.classList).filter(cls => ['carm', 'oring'].includes(cls));
-                      console.log("-->Processing paragraph with classes: ", p.classList);
-      
                       const frequencyMatch = frequencies.some(freq => frequencyFilters.has(freq)) || frequencyFilters.size === 0;
                       const machineMatch = machines.some(machine => machineTypeFilters.has(machine)) || machineTypeFilters.size === 0;
-      
-                      console.log("-->Frequency Match: ", frequencyMatch, "Machine Match: ", machineMatch);
-      
                       return frequencyMatch && machineMatch;
                   };
       
-                  p.style.display = isVisible(p) ? '' : 'none';
-                  console.log("-->Set display for paragraph to: ", p.style.display);
+                  if (isVisible(p)) {
+                      p.style.display = 'block';  // explicitly set to 'block'
+                      console.log("Set display for paragraph to: block");
+                  } else {
+                      p.style.display = 'none';   // explicitly set to 'none'
+                      console.log("Set display for paragraph to: none");
+                  }
               });
           }
       
           checkboxes.forEach(checkbox => {
               checkbox.addEventListener('change', function() {
-                  console.log("-->Checkbox changed: ", checkbox.id, "New state: ", checkbox.checked);
+                  console.log("Checkbox changed: ", checkbox.id, "New state: ", checkbox.checked);
                   updateVisibility();
               });
           });
@@ -144,6 +129,7 @@
           updateVisibility();
       });
       </script>
+      
       
   </body>
 </html>
