@@ -77,41 +77,45 @@
     </div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-          const checkboxes = document.querySelectorAll('.newCheckbox-group input');
-          const contentSections = document.querySelectorAll('section');
-      
-          function filterContent() {
-              const frequencyFilters = new Set();
-              const machineTypeFilters = new Set();
-      
-              // Collect all checked frequencies and machine types
-              document.querySelectorAll('input[name="frequency"]:checked').forEach(input => frequencyFilters.add(input.value.toLowerCase()));
-              document.querySelectorAll('input[name="machine_type"]:checked').forEach(input => machineTypeFilters.add(input.value.toLowerCase()));
-      
-              contentSections.forEach(section => {
-                  const frequencies = section.dataset.frequencies.split(' ');
-                  const machineTypes = section.dataset.machineTypes.split(' ');
-      
-                  // Determine if the section should be visible
-                  const showByFrequency = frequencyFilters.size === 0 || frequencies.some(freq => frequencyFilters.has(freq));
-                  const showByMachineType = machineTypeFilters.size === 0 || machineTypes.some(type => machineTypeFilters.has(type));
-      
-                  // Show or hide section based on filters
-                  if (showByFrequency && showByMachineType) {
-                      section.style.display = '';
-                  } else {
-                      section.style.display = 'none';
-                  }
-              });
-          }
-      
-          // Add event listeners
-          checkboxes.forEach(checkbox => {
-              checkbox.addEventListener('change', filterContent);
-          });
-      });
-      </script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const checkboxes = document.querySelectorAll('.newCheckbox-group input[type="checkbox"]');
+
+        // Function to update display of sections based on selected checkboxes
+        function updateVisibility() {
+            // Collect the active filters for frequency and machine type
+            const frequencyFilters = new Set();
+            const machineTypeFilters = new Set();
+
+            document.querySelectorAll('#frequency .newCheckbox-group input:checked').forEach(input => frequencyFilters.add(input.value.toLowerCase()));
+            document.querySelectorAll('#machine_type .newCheckbox-group input:checked').forEach(input => machineTypeFilters.add(input.value.toLowerCase()));
+
+            // Function to check if a section should be visible
+            const isVisible = (section) => {
+                const frequencies = Array.from(section.classList).filter(cls => ['daily', 'monthly', 'yearly'].includes(cls));
+                const machines = Array.from(section.classList).filter(cls => ['carm', 'oring'].includes(cls));
+
+                const frequencyMatch = frequencies.some(freq => frequencyFilters.has(freq)) || frequencyFilters.size === 0;
+                const machineMatch = machines.some(machine => machineTypeFilters.has(machine)) || machineTypeFilters.size === 0;
+
+                return frequencyMatch && machineMatch;
+            };
+
+            // Apply visibility rules to each section
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = isVisible(section) ? '' : 'none';
+            });
+        }
+
+        // Event listener for any change in checkboxes
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateVisibility);
+        });
+
+        // Initial visibility update
+        updateVisibility();
+    });
+
+    </script>
       
   </body>
 </html>
