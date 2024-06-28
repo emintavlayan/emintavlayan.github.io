@@ -88,12 +88,12 @@
               const machineTypeFilters = new Set();
       
               document.querySelectorAll('#frequency .newCheckbox-group input:checked').forEach(input => {
-                  frequencyFilters.add(input.value.toLowerCase());
+                  frequencyFilters.add(input.value.toLowerCase()); // Ensure we handle cases correctly
                   console.log("Added to frequencyFilters: ", input.value);
               });
       
               document.querySelectorAll('#machine_type .newCheckbox-group input:checked').forEach(input => {
-                  machineTypeFilters.add(input.value.toLowerCase());
+                  machineTypeFilters.add(input.value.toLowerCase()); // Ensure we handle cases correctly
                   console.log("Added to machineTypeFilters: ", input.value);
               });
       
@@ -102,20 +102,20 @@
       
               document.querySelectorAll('section p').forEach(p => {
                   const isVisible = (p) => {
-                      const frequencies = Array.from(p.classList).filter(cls => ['daily', 'monthly', 'yearly'].includes(cls));
-                      const machines = Array.from(p.classList).filter(cls => ['carm', 'oring'].includes(cls));
-                      const frequencyMatch = frequencies.some(freq => frequencyFilters.has(freq)) || frequencyFilters.size === 0;
-                      const machineMatch = machines.some(machine => machineTypeFilters.has(machine)) || machineTypeFilters.size === 0;
+                      const frequencies = Array.from(p.classList).filter(cls => frequencyFilters.has(cls));
+                      const machines = Array.from(p.classList).filter(cls => machineTypeFilters.has(cls));
+                      console.log("Processing paragraph with classes: ", p.classList);
+      
+                      const frequencyMatch = frequencies.length > 0 || frequencyFilters.size === 0;
+                      const machineMatch = machines.length > 0 || machineTypeFilters.size === 0;
+      
+                      console.log("Frequency Match: ", frequencyMatch, "Machine Match: ", machineMatch);
+      
                       return frequencyMatch && machineMatch;
                   };
       
-                  if (isVisible(p)) {
-                      p.style.display = 'block';  // explicitly set to 'block'
-                      console.log("Set display for paragraph to: block");
-                  } else {
-                      p.style.display = 'none';   // explicitly set to 'none'
-                      console.log("Set display for paragraph to: none");
-                  }
+                  p.style.display = isVisible(p) ? 'block' : 'none';
+                  console.log("Set display for paragraph to: ", p.style.display);
               });
           }
       
@@ -129,6 +129,7 @@
           updateVisibility();
       });
       </script>
+      
       
       
   </body>
