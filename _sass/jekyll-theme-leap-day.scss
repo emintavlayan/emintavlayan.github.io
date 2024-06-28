@@ -263,6 +263,7 @@ header {
     padding:0;
     float: left;
     margin-left:10px;
+    padding-left: 50px;
 
     li {
       display:inline;
@@ -350,7 +351,7 @@ nav {
 
     .active {
       border-right:solid 4px #39C;
-      padding-right:13px;
+      padding-right:10px;
     }
   }
 }
