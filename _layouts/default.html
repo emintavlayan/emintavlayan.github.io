@@ -83,9 +83,9 @@
               return document.getElementById(checkboxId).checked;
           }
       
-          // Determine if any checkboxes within a given group are checked
-          function anyChecked(selector) {
-              return document.querySelectorAll(selector + ' input[type="checkbox"]:checked').length > 0;
+          // Determine if any checkboxes are checked
+          function anyChecked() {
+              return document.querySelectorAll('.newCheckbox-group input[type="checkbox"]:checked').length > 0;
           }
       
           // Update visibility of all elements within the 'wrapper' div based on the checkbox state
@@ -99,28 +99,30 @@
       
               console.log("Checkbox states - Daily: ", isDailyChecked, "Monthly: ", isMonthlyChecked, "Yearly: ", isYearlyChecked, "C-Arm: ", isCarmChecked, "O-Ring: ", isOringChecked);
       
-              // Determine if any frequency or machine type checkboxes are checked
-              const anyFrequencyChecked = anyChecked('#frequency');
-              const anyMachineTypeChecked = anyChecked('#machine_type');
+              // If no checkboxes are checked, display all elements
+              const allChecked = anyChecked();
       
               // Filter all child elements of the wrapper div based on the checkboxes
               document.querySelectorAll('.wrapper *').forEach(element => {
-                  const hasDaily = element.classList.contains('daily');
-                  const hasMonthly = element.classList.contains('monthly');
-                  const hasYearly = element.classList.contains('yearly');
-                  const hasCarm = element.classList.contains('carm');
-                  const hasOring = element.classList.contains('oring');
+                  if (!allChecked) {
+                      element.style.display = ''; // Reset display to default if no checkboxes are checked
+                  } else {
+                      const hasDaily = element.classList.contains('daily');
+                      const hasMonthly = element.classList.contains('monthly');
+                      const hasYearly = element.classList.contains('yearly');
+                      const hasCarm = element.classList.contains('carm');
+                      const hasOring = element.classList.contains('oring');
       
-                  const showBasedOnFrequency = (hasDaily && isDailyChecked) || (hasMonthly && isMonthlyChecked) || (hasYearly && isYearlyChecked);
-                  const showBasedOnMachine = (hasCarm && isCarmChecked) || (hasOring && isOringChecked);
+                      // Determine visibility based on checkbox states
+                      const isVisible = (hasDaily && isDailyChecked) || 
+                                        (hasMonthly && isMonthlyChecked) || 
+                                        (hasYearly && isYearlyChecked) || 
+                                        (hasCarm && isCarmChecked) || 
+                                        (hasOring && isOringChecked) ||
+                                        (!hasDaily && !hasMonthly && !hasYearly && !hasCarm && !hasOring);
       
-                  // Determine visibility based on checkbox states
-                  const isVisible = (
-                      (showBasedOnFrequency || !anyFrequencyChecked) &&
-                      (showBasedOnMachine || !anyMachineTypeChecked)
-                  );
-      
-                  element.style.display = isVisible ? '' : 'none';
+                      element.style.display = isVisible ? '' : 'none';
+                  }
               });
           }
       
@@ -136,6 +138,10 @@
           updateVisibility();
       });
       </script>
+      
+      
+      
+      
       
   </body>
 </html>
