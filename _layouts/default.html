@@ -77,43 +77,41 @@
     </div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const buttons = document.querySelectorAll('.btn-check');
-        buttons.forEach(button => {
-          button.addEventListener('change', function () {
+      document.addEventListener('DOMContentLoaded', function() {
+        // Select all checkbox elements
+        const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
+
+        checkboxes.forEach(function(checkbox) {
+          checkbox.addEventListener('change', function() {
             filterContent();
           });
         });
-  
+
         function filterContent() {
-          const dailyChecked = document.getElementById('daily').checked;
-          const monthlyChecked = document.getElementById('monthly').checked;
-          const yearlyChecked = document.getElementById('yearly').checked;
-          const carmChecked = document.getElementById('carm').checked;
-          const oringChecked = document.getElementById('oring').checked;
-  
-          const items = document.querySelectorAll('.item'); // Assuming your items have a class 'item'
-  
-          items.forEach(item => {
-            const isDaily = item.classList.contains('daily');
-            const isMonthly = item.classList.contains('monthly');
-            const isYearly = item.classList.contains('yearly');
-            const isCarm = item.classList.contains('carm');
-            const isOring = item.classList.contains('oring');
-  
-            let show = (!dailyChecked && !monthlyChecked && !yearlyChecked) || 
-                       (dailyChecked && isDaily) || 
-                       (monthlyChecked && isMonthly) || 
-                       (yearlyChecked && isYearly);
-  
-            show = show && ((!carmChecked && !oringChecked) || 
-                            (carmChecked && isCarm) || 
-                            (oringChecked && isOring));
-  
-            item.style.display = show ? '' : 'none';
+          const allSections = document.querySelectorAll('[class*="daily"], [class*="monthly"], [class*="yearly"], [class*="c-arm"], [class*="o-ring"]');
+          // Hide all sections initially
+          allSections.forEach(section => {
+            section.classList.add('hidden');
           });
+
+          // Determine which checkboxes are checked
+          const checkedBoxes = Array.from(checkboxes).filter(cb => cb.checked);
+          if (checkedBoxes.length === 0) {
+            // If no checkboxes are checked, show all sections
+            allSections.forEach(section => section.classList.remove('hidden'));
+          } else {
+            // Show only sections that match any of the checked checkboxes
+            checkedBoxes.forEach(box => {
+              const selector = '.' + box.id; // Assuming class matches checkbox id
+              const matchedSections = document.querySelectorAll(selector);
+              matchedSections.forEach(section => {
+                section.classList.remove('hidden');
+              });
+            });
+          }
         }
       });
+        
     </script>
   </body>
 </html>
