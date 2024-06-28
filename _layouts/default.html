@@ -75,7 +75,6 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
       </footer>
     </div>
-
     <script>
       document.addEventListener('DOMContentLoaded', function() {
           // Function to check if a specific checkbox is checked
@@ -102,13 +101,11 @@
               const isCarmChecked = isChecked('carm');
               const isOringChecked = isChecked('oring');
       
-              console.log("Checkbox states - Daily:", isDailyChecked, "Monthly:", isMonthlyChecked, "Yearly:", isYearlyChecked, "C-Arm:", isCarmChecked, "O-Ring:", isOringChecked);
+              console.log("Checkbox states - Daily: ", isDailyChecked, "Monthly: ", isMonthlyChecked, "Yearly: ", isYearlyChecked, "C-Arm: ", isCarmChecked, "O-Ring: ", isOringChecked);
       
-              // Check if any frequency or machine type checkboxes are checked
+              // If no frequency checkboxes are checked, display all elements
               const frequencyChecked = anyFrequencyChecked();
               const machineTypeChecked = anyMachineTypeChecked();
-      
-              console.log("Any frequency checked:", frequencyChecked, "Any machine type checked:", machineTypeChecked);
       
               // Filter all child elements of the wrapper div based on the checkboxes
               document.querySelectorAll('.wrapper *').forEach(element => {
@@ -118,18 +115,25 @@
                   const hasCarm = element.classList.contains('carm');
                   const hasOring = element.classList.contains('oring');
       
-                  // Determine visibility based on checkbox states
+                  // Default visibility to true
                   let isVisible = true;
       
+                  // If any frequency checkbox is checked, apply frequency filter
                   if (frequencyChecked) {
                       isVisible = (hasDaily && isDailyChecked) || 
                                   (hasMonthly && isMonthlyChecked) || 
                                   (hasYearly && isYearlyChecked);
                   }
       
+                  // If frequency filter passed or no frequency filter applied, apply machine type filter
                   if (isVisible && machineTypeChecked) {
                       isVisible = (hasCarm && isCarmChecked) || 
                                   (hasOring && isOringChecked);
+                  }
+      
+                  // Ensure elements without frequency or machine type classes are always visible
+                  if (!hasDaily && !hasMonthly && !hasYearly && !hasCarm && !hasOring) {
+                      isVisible = true;
                   }
       
                   element.style.display = isVisible ? '' : 'none';
@@ -140,7 +144,7 @@
           // Attach event listeners to all checkboxes to update visibility on change
           document.querySelectorAll('.newCheckbox-group input[type="checkbox"]').forEach(checkbox => {
               checkbox.addEventListener('change', function() {
-                  console.log("Checkbox changed:", checkbox.id, "New state:", checkbox.checked);
+                  console.log("Checkbox changed: ", checkbox.id, "New state: ", checkbox.checked);
                   updateVisibility();
               });
           });
@@ -150,6 +154,6 @@
       });
       </script>
       
-      
+    
   </body>
 </html>
