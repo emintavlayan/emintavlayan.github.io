@@ -50,20 +50,20 @@
         <div>
           <div>Frequency:</div>
           <div class="newCheckbox-group">
-            <input type="checkbox" id="daily" name="frequency" value="Daily">
+            <input type="checkbox" id="daily" name="frequency" value="daily">
             <label for="daily">Daily</label>
-            <input type="checkbox" id="monthly" name="frequency" value="Monthly">
+            <input type="checkbox" id="monthly" name="frequency" value="monthly">
             <label for="monthly">Monthly</label>
-            <input type="checkbox" id="yearly" name="frequency" value="Yearly">
+            <input type="checkbox" id="yearly" name="frequency" value="yearly">
             <label for="yearly">Yearly</label>
           </div>
         </div>
         <div>
           <div>Machine Type:</div>
           <div class="newCheckbox-group">
-            <input type="checkbox" id="carm" name="machine_type" value="C-Arm">
+            <input type="checkbox" id="carm" name="machine_type" value="carm">
             <label for="carm">C-Arm</label>
-            <input type="checkbox" id="oring" name="machine_type" value="O-Ring">
+            <input type="checkbox" id="oring" name="machine_type" value="oring">
             <label for="oring">O-Ring</label>
           </div>
         </div>
@@ -78,57 +78,55 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-          console.log("DOM fully loaded and parsed");
+          // Function to check if a specific checkbox is checked
+          function isChecked(checkboxId) {
+              return document.getElementById(checkboxId).checked;
+          }
       
-          const checkboxes = document.querySelectorAll('.newCheckbox-group input[type="checkbox"]');
-          console.log("Found checkboxes: ", checkboxes.length);
-      
+          // Update visibility of all elements within the 'wrapper' div based on the checkbox state
           function updateVisibility() {
-              const frequencyFilters = new Set();
-              const machineTypeFilters = new Set();
+              // Store boolean values for each checkbox
+              const isDailyChecked = isChecked('daily');
+              const isMonthlyChecked = isChecked('monthly');
+              const isYearlyChecked = isChecked('yearly');
+              const isCarmChecked = isChecked('carm');
+              const isOringChecked = isChecked('oring');
       
-              document.querySelectorAll('#frequency .newCheckbox-group input:checked').forEach(input => {
-                  frequencyFilters.add(input.value.toLowerCase()); // Ensure we handle cases correctly
-                  console.log("Added to frequencyFilters: ", input.value);
-              });
+              console.log("Checkbox states - Daily: ", isDailyChecked, "Monthly: ", isMonthlyChecked, "Yearly: ", isYearlyChecked, "C-Arm: ", isCarmChecked, "O-Ring: ", isOringChecked);
       
-              document.querySelectorAll('#machine_type .newCheckbox-group input:checked').forEach(input => {
-                  machineTypeFilters.add(input.value.toLowerCase()); // Ensure we handle cases correctly
-                  console.log("Added to machineTypeFilters: ", input.value);
-              });
+              // Filter all child elements of the wrapper div based on the checkboxes
+              document.querySelectorAll('.wrapper *').forEach(element => {
+                  const hasDaily = element.classList.contains('daily');
+                  const hasMonthly = element.classList.contains('monthly');
+                  const hasYearly = element.classList.contains('yearly');
+                  const hasCarm = element.classList.contains('carm');
+                  const hasOring = element.classList.contains('oring');
       
-              console.log("Current Frequency Filters: ", Array.from(frequencyFilters));
-              console.log("Current Machine Type Filters: ", Array.from(machineTypeFilters));
+                  // Determine visibility based on checkbox states
+                  const isVisible = (hasDaily && isDailyChecked) || 
+                                    (hasMonthly && isMonthlyChecked) || 
+                                    (hasYearly && isYearlyChecked) || 
+                                    (hasCarm && isCarmChecked) || 
+                                    (hasOring && isOringChecked) ||
+                                    (!hasDaily && !hasMonthly && !hasYearly && !hasCarm && !hasOring);
       
-              document.querySelectorAll('section p').forEach(p => {
-                  const isVisible = (p) => {
-                      const frequencies = Array.from(p.classList).filter(cls => frequencyFilters.has(cls));
-                      const machines = Array.from(p.classList).filter(cls => machineTypeFilters.has(cls));
-                      console.log("Processing paragraph with classes: ", p.classList);
-      
-                      const frequencyMatch = frequencies.length > 0 || frequencyFilters.size === 0;
-                      const machineMatch = machines.length > 0 || machineTypeFilters.size === 0;
-      
-                      console.log("Frequency Match: ", frequencyMatch, "Machine Match: ", machineMatch);
-      
-                      return frequencyMatch && machineMatch;
-                  };
-      
-                  p.style.display = isVisible(p) ? 'block' : 'none';
-                  console.log("Set display for paragraph to: ", p.style.display);
+                  element.style.display = isVisible ? '' : 'none';  // Use default display style when visible
               });
           }
       
-          checkboxes.forEach(checkbox => {
+          // Attach event listeners to all checkboxes to update visibility on change
+          document.querySelectorAll('.newCheckbox-group input[type="checkbox"]').forEach(checkbox => {
               checkbox.addEventListener('change', function() {
                   console.log("Checkbox changed: ", checkbox.id, "New state: ", checkbox.checked);
                   updateVisibility();
               });
           });
       
+          // Initial visibility update on page load
           updateVisibility();
       });
       </script>
+      
       
       
       
