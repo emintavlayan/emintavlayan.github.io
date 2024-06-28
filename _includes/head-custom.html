@@ -6,4 +6,34 @@
 <!-- You can set your favicon here -->
 <!-- link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" -->
 
+<!-- Custom CSS for checkbox button group -->
+<style>
+    .newCheckbox-group {
+        display: flex;
+    }
+
+    .newCheckbox-group input[type="checkbox"] {
+        display: none;
+    }
+
+    .newCheckbox-group label {
+        border: 1px solid #007bff;
+        padding: 10px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .newCheckbox-group input[type="checkbox"]:checked + label {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .newCheckbox-group label:hover {
+        background-color: #e0e0e0;
+    }
+</style>
+
+
 <!-- end custom head snippets -->
