@@ -51,7 +51,7 @@
           <div>Frequency:</div>
           <div class="newCheckbox-group">
             <input type="checkbox" id="daily" name="frequency" value="Daily">
-            <label for="daily">Daily1</label>
+            <label for="daily">Daily</label>
             <input type="checkbox" id="monthly" name="frequency" value="Monthly">
             <label for="monthly">Monthly</label>
             <input type="checkbox" id="yearly" name="frequency" value="Yearly">
@@ -77,41 +77,41 @@
     </div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Select all checkbox elements
-        const checkboxes = document.querySelectorAll('.checkbox-group input[type="checkbox"]');
-
-        checkboxes.forEach(function(checkbox) {
-          checkbox.addEventListener('change', function() {
-            filterContent();
-          });
-        });
-
-        function filterContent() {
-          const allSections = document.querySelectorAll('[class*="daily"], [class*="monthly"], [class*="yearly"], [class*="c-arm"], [class*="o-ring"]');
-          // Hide all sections initially
-          allSections.forEach(section => {
-            section.classList.add('hidden');
-          });
-
-          // Determine which checkboxes are checked
-          const checkedBoxes = Array.from(checkboxes).filter(cb => cb.checked);
-          if (checkedBoxes.length === 0) {
-            // If no checkboxes are checked, show all sections
-            allSections.forEach(section => section.classList.remove('hidden'));
-          } else {
-            // Show only sections that match any of the checked checkboxes
-            checkedBoxes.forEach(box => {
-              const selector = '.' + box.id; // Assuming class matches checkbox id
-              const matchedSections = document.querySelectorAll(selector);
-              matchedSections.forEach(section => {
-                section.classList.remove('hidden');
+      document.addEventListener('DOMContentLoaded', function () {
+          const checkboxes = document.querySelectorAll('.newCheckbox-group input');
+          const contentSections = document.querySelectorAll('section');
+      
+          function filterContent() {
+              const frequencyFilters = new Set();
+              const machineTypeFilters = new Set();
+      
+              // Collect all checked frequencies and machine types
+              document.querySelectorAll('input[name="frequency"]:checked').forEach(input => frequencyFilters.add(input.value.toLowerCase()));
+              document.querySelectorAll('input[name="machine_type"]:checked').forEach(input => machineTypeFilters.add(input.value.toLowerCase()));
+      
+              contentSections.forEach(section => {
+                  const frequencies = section.dataset.frequencies.split(' ');
+                  const machineTypes = section.dataset.machineTypes.split(' ');
+      
+                  // Determine if the section should be visible
+                  const showByFrequency = frequencyFilters.size === 0 || frequencies.some(freq => frequencyFilters.has(freq));
+                  const showByMachineType = machineTypeFilters.size === 0 || machineTypes.some(type => machineTypeFilters.has(type));
+      
+                  // Show or hide section based on filters
+                  if (showByFrequency && showByMachineType) {
+                      section.style.display = '';
+                  } else {
+                      section.style.display = 'none';
+                  }
               });
-            });
           }
-        }
+      
+          // Add event listeners
+          checkboxes.forEach(checkbox => {
+              checkbox.addEventListener('change', filterContent);
+          });
       });
-        
-    </script>
+      </script>
+      
   </body>
 </html>
