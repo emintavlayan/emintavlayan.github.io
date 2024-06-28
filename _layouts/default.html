@@ -78,43 +78,66 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        const checkboxes = document.querySelectorAll('.newCheckbox-group input[type="checkbox"]');
-
-        // Function to update display of sections based on selected checkboxes
-        function updateVisibility() {
-            // Collect the active filters for frequency and machine type
-            const frequencyFilters = new Set();
-            const machineTypeFilters = new Set();
-
-            document.querySelectorAll('#frequency .newCheckbox-group input:checked').forEach(input => frequencyFilters.add(input.value.toLowerCase()));
-            document.querySelectorAll('#machine_type .newCheckbox-group input:checked').forEach(input => machineTypeFilters.add(input.value.toLowerCase()));
-
-            // Function to check if a section should be visible
-            const isVisible = (section) => {
-                const frequencies = Array.from(section.classList).filter(cls => ['daily', 'monthly', 'yearly'].includes(cls));
-                const machines = Array.from(section.classList).filter(cls => ['carm', 'oring'].includes(cls));
-
-                const frequencyMatch = frequencies.some(freq => frequencyFilters.has(freq)) || frequencyFilters.size === 0;
-                const machineMatch = machines.some(machine => machineTypeFilters.has(machine)) || machineTypeFilters.size === 0;
-
-                return frequencyMatch && machineMatch;
-            };
-
-            // Apply visibility rules to each section
-            document.querySelectorAll('section').forEach(section => {
-                section.style.display = isVisible(section) ? '' : 'none';
-            });
-        }
-
-        // Event listener for any change in checkboxes
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', updateVisibility);
-        });
-
-        // Initial visibility update
-        updateVisibility();
-      });
-    </script>
+          // Log when the script is loaded and DOM is ready
+          console.log("DOM fully loaded and parsed");
       
+          // Gather all checkboxes in the specified groups
+          const checkboxes = document.querySelectorAll('.newCheckbox-group input[type="checkbox"]');
+          console.log("Found checkboxes: ", checkboxes.length);
+      
+          // Function to update visibility of paragraphs based on checkbox filters
+          function updateVisibility() {
+              // Sets to store the currently active frequency and machine type filters
+              const frequencyFilters = new Set();
+              const machineTypeFilters = new Set();
+      
+              // Collect all checked frequency checkboxes and add their values to the frequencyFilters set
+              document.querySelectorAll('#frequency .newCheckbox-group input:checked').forEach(input => {
+                  frequencyFilters.add(input.value.toLowerCase());
+                  console.log("Added to frequencyFilters: ", input.value);
+              });
+      
+              // Collect all checked machine type checkboxes and add their values to the machineTypeFilters set
+              document.querySelectorAll('#machine_type .newCheckbox-group input:checked').forEach(input => {
+                  machineTypeFilters.add(input.value.toLowerCase());
+                  console.log("Added to machineTypeFilters: ", input.value);
+              });
+      
+              // Select all paragraph tags within the section for filtering
+              document.querySelectorAll('section p').forEach(p => {
+                  // Determine if the paragraph should be visible based on the current filters
+                  const isVisible = (p) => {
+                      // Filter classes for frequency and machine type from the paragraph's classList
+                      const frequencies = Array.from(p.classList).filter(cls => ['daily', 'monthly', 'yearly'].includes(cls));
+                      const machines = Array.from(p.classList).filter(cls => ['carm', 'oring'].includes(cls));
+                      console.log("Processing paragraph with classes: ", p.classList);
+      
+                      // Check if any of the paragraph's frequency/machine classes are in the active filters
+                      const frequencyMatch = frequencies.some(freq => frequencyFilters.has(freq)) || frequencyFilters.size === 0;
+                      const machineMatch = machines.some(machine => machineTypeFilters.has(machine)) || machineTypeFilters.size === 0;
+                      console.log("Frequency Match: ", frequencyMatch, "Machine Match: ", machineMatch);
+      
+                      // Return true if both frequency and machine types match or if no filters are set
+                      return frequencyMatch && machineMatch;
+                  };
+      
+                  // Apply the visibility based on the result of isVisible function
+                  p.style.display = isVisible(p) ? '' : 'none';
+                  console.log("Set display to: ", p.style.display);
+              });
+          }
+      
+          // Attach change event listeners to all checkboxes to update visibility on change
+          checkboxes.forEach(checkbox => {
+              checkbox.addEventListener('change', function() {
+                  console.log("Checkbox changed: ", checkbox.id);
+                  updateVisibility();
+              });
+          });
+      
+          // Initial update to set the correct visibility states when the page loads
+          updateVisibility();
+      });
+      </script>      
   </body>
 </html>
