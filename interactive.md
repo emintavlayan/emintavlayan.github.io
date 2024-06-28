@@ -3,9 +3,6 @@ layout: default
 title: Medikal Fizik Dernegi - GG007
 ---
 
-## Interactive Test Sayfasi Deneme 
-
-
 
 ## 1.Mekanik testler
 

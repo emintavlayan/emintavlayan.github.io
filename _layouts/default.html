@@ -68,5 +68,45 @@
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
       </footer>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.btn-check');
+        buttons.forEach(button => {
+          button.addEventListener('change', function () {
+            filterContent();
+          });
+        });
+  
+        function filterContent() {
+          const dailyChecked = document.getElementById('daily').checked;
+          const monthlyChecked = document.getElementById('monthly').checked;
+          const yearlyChecked = document.getElementById('yearly').checked;
+          const carmChecked = document.getElementById('carm').checked;
+          const oringChecked = document.getElementById('oring').checked;
+  
+          const items = document.querySelectorAll('.item'); // Assuming your items have a class 'item'
+  
+          items.forEach(item => {
+            const isDaily = item.classList.contains('daily');
+            const isMonthly = item.classList.contains('monthly');
+            const isYearly = item.classList.contains('yearly');
+            const isCarm = item.classList.contains('carm');
+            const isOring = item.classList.contains('oring');
+  
+            let show = (!dailyChecked && !monthlyChecked && !yearlyChecked) || 
+                       (dailyChecked && isDaily) || 
+                       (monthlyChecked && isMonthly) || 
+                       (yearlyChecked && isYearly);
+  
+            show = show && ((!carmChecked && !oringChecked) || 
+                            (carmChecked && isCarm) || 
+                            (oringChecked && isOring));
+  
+            item.style.display = show ? '' : 'none';
+          });
+        }
+      });
+    </script>
   </body>
 </html>
