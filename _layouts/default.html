@@ -83,9 +83,14 @@
               return document.getElementById(checkboxId).checked;
           }
       
-          // Determine if any checkboxes are checked
-          function anyChecked() {
-              return document.querySelectorAll('.newCheckbox-group input[type="checkbox"]:checked').length > 0;
+          // Determine if any frequency checkboxes are checked
+          function anyFrequencyChecked() {
+              return document.querySelectorAll('#frequency .newCheckbox-group input[type="checkbox"]:checked').length > 0;
+          }
+      
+          // Determine if any machine type checkboxes are checked
+          function anyMachineTypeChecked() {
+              return document.querySelectorAll('#machine_type .newCheckbox-group input[type="checkbox"]:checked').length > 0;
           }
       
           // Update visibility of all elements within the 'wrapper' div based on the checkbox state
@@ -99,30 +104,34 @@
       
               console.log("Checkbox states - Daily: ", isDailyChecked, "Monthly: ", isMonthlyChecked, "Yearly: ", isYearlyChecked, "C-Arm: ", isCarmChecked, "O-Ring: ", isOringChecked);
       
-              // If no checkboxes are checked, display all elements
-              const allChecked = anyChecked();
+              // If no frequency checkboxes are checked, display all elements
+              const frequencyChecked = anyFrequencyChecked();
+              const machineTypeChecked = anyMachineTypeChecked();
       
               // Filter all child elements of the wrapper div based on the checkboxes
               document.querySelectorAll('.wrapper *').forEach(element => {
-                  if (!allChecked) {
-                      element.style.display = ''; // Reset display to default if no checkboxes are checked
-                  } else {
-                      const hasDaily = element.classList.contains('daily');
-                      const hasMonthly = element.classList.contains('monthly');
-                      const hasYearly = element.classList.contains('yearly');
-                      const hasCarm = element.classList.contains('carm');
-                      const hasOring = element.classList.contains('oring');
+                  const hasDaily = element.classList.contains('daily');
+                  const hasMonthly = element.classList.contains('monthly');
+                  const hasYearly = element.classList.contains('yearly');
+                  const hasCarm = element.classList.contains('carm');
+                  const hasOring = element.classList.contains('oring');
       
-                      // Determine visibility based on checkbox states
-                      const isVisible = (hasDaily && isDailyChecked) || 
-                                        (hasMonthly && isMonthlyChecked) || 
-                                        (hasYearly && isYearlyChecked) || 
-                                        (hasCarm && isCarmChecked) || 
-                                        (hasOring && isOringChecked) ||
-                                        (!hasDaily && !hasMonthly && !hasYearly && !hasCarm && !hasOring);
+                  // Determine visibility based on checkbox states
+                  let isVisible = true;
       
-                      element.style.display = isVisible ? '' : 'none';
+                  if (frequencyChecked) {
+                      isVisible = (hasDaily && isDailyChecked) || 
+                                  (hasMonthly && isMonthlyChecked) || 
+                                  (hasYearly && isYearlyChecked);
                   }
+      
+                  if (isVisible && machineTypeChecked) {
+                      isVisible = (hasCarm && isCarmChecked) || 
+                                  (hasOring && isOringChecked);
+                  }
+      
+                  element.style.display = isVisible ? '' : 'none';
+                  console.log(`Set display for element with classes [${element.classList}] to: ${element.style.display}`);
               });
           }
       
@@ -138,10 +147,6 @@
           updateVisibility();
       });
       </script>
-      
-      
-      
-      
       
   </body>
 </html>
