@@ -10,44 +10,51 @@
 <style>
     .newCheckbox-group {
       display: flex;
-      width: 100%;  /* Set width to 100% to fill the container */
+      width: 100%; /* Set width to 100% to fill the container */
     }
-    
+  
     .newCheckbox-group input[type="checkbox"] {
       display: none;
     }
-    
+  
     .newCheckbox-group label {
-      flex: 1;  /* Make each label grow equally */
+      flex: 1; /* Make each label grow equally */
       display: flex;
       justify-content: center;
       align-items: center;
       border: 1px solid #666666;
       padding: 5px 5px;
-      margin: 0;  /* Adjust or remove margin */
+      margin: 0; /* Adjust or remove margin */
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
       background-color: #FFFFFF;
-      box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
     }
-    
+  
     .newCheckbox-group label:first-of-type {
       border-radius: 7px 0 0 7px; /* Rounded corners for the first element */
     }
-    
+  
     .newCheckbox-group label:last-of-type {
       border-radius: 0 7px 7px 0; /* Rounded corners for the last element */
     }
-    
+  
     .newCheckbox-group input[type="checkbox"]:checked + label {
       background-color: #FFCC00;
       color: white;
     }
-    
+  
     .newCheckbox-group label:hover {
       background-color: #e0e0e0;
     }
-</style>
+  
+    /* Styling for the section headers */
+    div > div:first-child {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  </style>
+  
 
 
 
