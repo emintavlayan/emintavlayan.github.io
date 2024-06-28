@@ -78,66 +78,72 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-          // Log when the script is loaded and DOM is ready
-          console.log("DOM fully loaded and parsed");
+          console.log("-->DOM fully loaded and parsed");
       
           // Gather all checkboxes in the specified groups
           const checkboxes = document.querySelectorAll('.newCheckbox-group input[type="checkbox"]');
-          console.log("Found checkboxes: ", checkboxes.length);
+          console.log("-->Found checkboxes: ", checkboxes.length);
       
-          // Function to update visibility of paragraphs based on checkbox filters
+          if (checkboxes.length === 0) {
+              console.log("-->Error: No checkboxes found. Check your HTML markup.");
+          }
+      
           function updateVisibility() {
-              // Sets to store the currently active frequency and machine type filters
               const frequencyFilters = new Set();
               const machineTypeFilters = new Set();
       
-              // Collect all checked frequency checkboxes and add their values to the frequencyFilters set
+              // Collect all checked frequency checkboxes
               document.querySelectorAll('#frequency .newCheckbox-group input:checked').forEach(input => {
                   frequencyFilters.add(input.value.toLowerCase());
-                  console.log("Added to frequencyFilters: ", input.value);
+                  console.log("-->Added to frequencyFilters: ", input.value);
               });
       
-              // Collect all checked machine type checkboxes and add their values to the machineTypeFilters set
+              // Collect all checked machine type checkboxes
               document.querySelectorAll('#machine_type .newCheckbox-group input:checked').forEach(input => {
                   machineTypeFilters.add(input.value.toLowerCase());
-                  console.log("Added to machineTypeFilters: ", input.value);
+                  console.log("-->Added to machineTypeFilters: ", input.value);
               });
       
+              console.log("-->Current Frequency Filters: ", Array.from(frequencyFilters));
+              console.log("-->Current Machine Type Filters: ", Array.from(machineTypeFilters));
+      
               // Select all paragraph tags within the section for filtering
-              document.querySelectorAll('section p').forEach(p => {
-                  // Determine if the paragraph should be visible based on the current filters
+              const paragraphs = document.querySelectorAll('section p');
+              console.log("-->Found paragraphs for filtering: ", paragraphs.length);
+      
+              if (paragraphs.length === 0) {
+                  console.log("-->Error: No paragraphs found within the section. Check your HTML markup.");
+              }
+      
+              paragraphs.forEach(p => {
                   const isVisible = (p) => {
-                      // Filter classes for frequency and machine type from the paragraph's classList
                       const frequencies = Array.from(p.classList).filter(cls => ['daily', 'monthly', 'yearly'].includes(cls));
                       const machines = Array.from(p.classList).filter(cls => ['carm', 'oring'].includes(cls));
-                      console.log("Processing paragraph with classes: ", p.classList);
+                      console.log("-->Processing paragraph with classes: ", p.classList);
       
-                      // Check if any of the paragraph's frequency/machine classes are in the active filters
                       const frequencyMatch = frequencies.some(freq => frequencyFilters.has(freq)) || frequencyFilters.size === 0;
                       const machineMatch = machines.some(machine => machineTypeFilters.has(machine)) || machineTypeFilters.size === 0;
-                      console.log("Frequency Match: ", frequencyMatch, "Machine Match: ", machineMatch);
       
-                      // Return true if both frequency and machine types match or if no filters are set
+                      console.log("-->Frequency Match: ", frequencyMatch, "Machine Match: ", machineMatch);
+      
                       return frequencyMatch && machineMatch;
                   };
       
-                  // Apply the visibility based on the result of isVisible function
                   p.style.display = isVisible(p) ? '' : 'none';
-                  console.log("Set display to: ", p.style.display);
+                  console.log("-->Set display for paragraph to: ", p.style.display);
               });
           }
       
-          // Attach change event listeners to all checkboxes to update visibility on change
           checkboxes.forEach(checkbox => {
               checkbox.addEventListener('change', function() {
-                  console.log("Checkbox changed: ", checkbox.id);
+                  console.log("-->Checkbox changed: ", checkbox.id, "New state: ", checkbox.checked);
                   updateVisibility();
               });
           });
       
-          // Initial update to set the correct visibility states when the page loads
           updateVisibility();
       });
-      </script>      
+      </script>
+      
   </body>
 </html>
