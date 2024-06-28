@@ -81,17 +81,12 @@
           function isChecked(checkboxId) {
               return document.getElementById(checkboxId).checked;
           }
-      
-          // Determine if any frequency checkboxes are checked
-          function anyFrequencyChecked() {
-              return document.querySelectorAll('#frequency .newCheckbox-group input[type="checkbox"]:checked').length > 0;
+
+          // Determine if any checkboxes within a given group are checked
+          function anyChecked(selector) {
+              return document.querySelectorAll(selector + ' input[type="checkbox"]:checked').length > 0;
           }
-      
-          // Determine if any machine type checkboxes are checked
-          function anyMachineTypeChecked() {
-              return document.querySelectorAll('#machine_type .newCheckbox-group input[type="checkbox"]:checked').length > 0;
-          }
-      
+
           // Update visibility of all elements within the 'wrapper' div based on the checkbox state
           function updateVisibility() {
               // Store boolean values for each checkbox
@@ -100,13 +95,13 @@
               const isYearlyChecked = isChecked('yearly');
               const isCarmChecked = isChecked('carm');
               const isOringChecked = isChecked('oring');
-      
+
               console.log("Checkbox states - Daily: ", isDailyChecked, "Monthly: ", isMonthlyChecked, "Yearly: ", isYearlyChecked, "C-Arm: ", isCarmChecked, "O-Ring: ", isOringChecked);
-      
-              // If no frequency checkboxes are checked, display all elements
-              const frequencyChecked = anyFrequencyChecked();
-              const machineTypeChecked = anyMachineTypeChecked();
-      
+
+              // Determine if any frequency or machine type checkboxes are checked
+              const anyFrequencyChecked = anyChecked('#frequency');
+              const anyMachineTypeChecked = anyChecked('#machine_type');
+
               // Filter all child elements of the wrapper div based on the checkboxes
               document.querySelectorAll('.wrapper *').forEach(element => {
                   const hasDaily = element.classList.contains('daily');
@@ -114,33 +109,20 @@
                   const hasYearly = element.classList.contains('yearly');
                   const hasCarm = element.classList.contains('carm');
                   const hasOring = element.classList.contains('oring');
-      
-                  // Default visibility to true
-                  let isVisible = true;
-      
-                  // If any frequency checkbox is checked, apply frequency filter
-                  if (frequencyChecked) {
-                      isVisible = (hasDaily && isDailyChecked) || 
-                                  (hasMonthly && isMonthlyChecked) || 
-                                  (hasYearly && isYearlyChecked);
-                  }
-      
-                  // If frequency filter passed or no frequency filter applied, apply machine type filter
-                  if (isVisible && machineTypeChecked) {
-                      isVisible = (hasCarm && isCarmChecked) || 
-                                  (hasOring && isOringChecked);
-                  }
-      
-                  // Ensure elements without frequency or machine type classes are always visible
-                  if (!hasDaily && !hasMonthly && !hasYearly && !hasCarm && !hasOring) {
-                      isVisible = true;
-                  }
-      
+
+                  const showBasedOnFrequency = (hasDaily && isDailyChecked) || (hasMonthly && isMonthlyChecked) || (hasYearly && isYearlyChecked);
+                  const showBasedOnMachine = (hasCarm && isCarmChecked) || (hasOring && isOringChecked);
+
+                  // Determine visibility based on checkbox states
+                  const isVisible = (
+                      (showBasedOnFrequency || !anyFrequencyChecked) &&
+                      (showBasedOnMachine || !anyMachineTypeChecked)
+                  );
+
                   element.style.display = isVisible ? '' : 'none';
-                  console.log(`Set display for element with classes [${element.classList}] to: ${element.style.display}`);
               });
           }
-      
+
           // Attach event listeners to all checkboxes to update visibility on change
           document.querySelectorAll('.newCheckbox-group input[type="checkbox"]').forEach(checkbox => {
               checkbox.addEventListener('change', function() {
