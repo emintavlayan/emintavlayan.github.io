@@ -23,9 +23,10 @@ title: Medikal Fizik Dernegi - GG007
 ### **2.1.** Output kontrolu
 
 **Gunluk** output kontrolleri icin kullanimi kolay cihazlarla kontroller yapilabilir. Daily QA gibi cihazlarinin bilinen Iyon odasi olcumleri ile dogru bir sekilde Cross-Calibre edilmis oldugundan emin olunmalidir
+{: .daily .carm .oring}
 
 **Aylik** kontrollerde, output kontrolu iyon odasi ve kati fantomlarda pratik bir sekilde yapilabilir. Yine de SSDL ile takip edilen su icinde referans dozimetre olcumleri ile cross calibrasyon katsayilarinin dogrulugundan emin olunmalidir. yukarida bahsedilen gunluk output kontrolu icin kullanilan tum sistemlerin AYlik kontrol sirasinda halen uyumlu olduklari da test edilmelidir.
-{: .monthly .yearly .carm .oring}
+{: .monthly .carm .oring}
 
 **Yillik** output kontrolleri, direkt olarak PSDL evya SSDL sertifikasi olan iyon odalari ile referans kosullarda gerceklestirilmelidir. Gunluk ve  Aylik kontrollerde kullanilan tum sistemler ve gerekli katsayilar yillik olcum sirasinda yeniden olculmeli ve teyit edilmelidir
 {: .yearly .carm .oring}
