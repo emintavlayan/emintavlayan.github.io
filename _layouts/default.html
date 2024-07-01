@@ -140,21 +140,35 @@
         });
     }
 
-    // Function to check if an item should be visible based on the current state
     function shouldItemBeVisible(item) {
-        // Check every group in the state object
-        return Object.keys(state).every(group => {
-            const groupSet = state[group];
-            if (groupSet.size === 0) return true; // If no checkboxes are selected in the group, the item should be visible
+    // Check every group in the state object
+    return Object.keys(state).every(group => {
+        const groupSet = state[group];
+        
+        // Debugging log
+        console.log(`Checking group: ${group}, state: ${Array.from(groupSet)}`);
 
-            // Check if the item has any class from the group's set
-            const itemHasGroupClass = [...groupSet].some(cls => item.classList.contains(cls));
-            if (!itemHasGroupClass) return true; // If the item doesn't have any relevant class, it should be visible
+        // If no checkboxes are selected in the group, the item should be visible
+        if (groupSet.size === 0) return true;
 
-            // If the item has a relevant class, check if it matches any selected value
-            return [...groupSet].some(cls => item.classList.contains(cls));
-        });
-    }
+        // Check if the item has any class from the group's set
+        const itemHasGroupClass = Array.from(groupSet).some(cls => item.classList.contains(cls));
+        
+        // Debugging log
+        console.log(`Item ${item.outerHTML} has group class: ${itemHasGroupClass}`);
+        
+        // If the item doesn't have any relevant class, it should be visible
+        if (!itemHasGroupClass) return true;
+
+        // If the item has a relevant class, check if it matches any selected value
+        const itemMatchesSelected = Array.from(groupSet).some(cls => item.classList.contains(cls));
+
+        // Debugging log
+        console.log(`Item ${item.outerHTML} matches selected value: ${itemMatchesSelected}`);
+
+        return itemMatchesSelected;
+    });
+}
 
     // Function to update the visibility of an item
     function updateItemVisibility(item, shouldShow) {
