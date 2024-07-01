@@ -51,7 +51,7 @@
           <div>Frequency:</div>
           <div class="newCheckbox-group">
               <input type="checkbox" id="daily" value="daily" class="newcheckbox" data-group="frequency">
-              <label for="daily">Daily</label>
+              <label for="daily">Daily02</label>
               <input type="checkbox" id="monthly" value="monthly" class="newcheckbox" data-group="frequency">
               <label for="monthly">Monthly</label>
               <input type="checkbox" id="yearly" value="yearly" class="newcheckbox" data-group="frequency">
@@ -115,7 +115,7 @@
         }
 
         function applyFilters() {
-            const items = document.querySelectorAll('.wrapper p');
+            const items = document.querySelectorAll('.wrapper nav *, .wrapper section *');
             items.forEach(item => {
                 const shouldShow = shouldItemBeVisible(item);
                 updateItemVisibility(item, shouldShow);
