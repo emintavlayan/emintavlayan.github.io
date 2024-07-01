@@ -155,15 +155,17 @@
           // If no checkboxes are selected in the group, skip this group
           if (groupSet.size === 0) return true;
 
-          // Check if the item has any class from the group's set
-          const itemHasGroupClass = Array.from(groupSet).some(cls => {
-            return item.classList.contains(cls);
-          });
+          // Identify all possible classes for the group
+          const groupClasses = Array.from(document.querySelectorAll(`.newcheckbox[data-group="${group}"]`))
+            .map(checkbox => checkbox.value);
+
+          // Check if the item has any class from the group's possible classes
+          const itemHasGroupClass = groupClasses.some(cls => item.classList.contains(cls));
 
           // Debugging log
           console.log(`Item ${item.outerHTML} has group class for ${group}: ${itemHasGroupClass}`);
 
-          // If the item has no relevant class for this group, skip this group
+          // If the item has no relevant class for this group, it should be visible
           if (!itemHasGroupClass) return true;
 
           // If the item has a relevant class, check if it matches any selected value
@@ -175,6 +177,7 @@
           return itemMatchesSelected;
         });
       }
+
 
 
 
