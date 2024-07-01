@@ -149,19 +149,31 @@
         return Object.keys(state).every(group => {
           const groupSet = state[group];
 
+          // Debugging log
+          console.log(`Checking group: ${group}, state: ${Array.from(groupSet)}`);
+
           // If no checkboxes are selected in the group, skip this group
           if (groupSet.size === 0) return true;
 
           // Check if the item has any class from the group's set
           const itemHasGroupClass = Array.from(groupSet).some(cls => item.classList.contains(cls));
 
+          // Debugging log
+          console.log(`Item ${item.outerHTML} has group class: ${itemHasGroupClass}`);
+
           // If the item has no relevant class for this group, skip this group
           if (!itemHasGroupClass) return true;
 
           // If the item has a relevant class, check if it matches any selected value
-          return Array.from(groupSet).some(cls => item.classList.contains(cls));
+          const itemMatchesSelected = Array.from(groupSet).some(cls => item.classList.contains(cls));
+
+          // Debugging log
+          console.log(`Item ${item.outerHTML} matches selected value: ${itemMatchesSelected}`);
+
+          return itemMatchesSelected;
         });
       }
+
 
 
       // Function to update the visibility of an item
