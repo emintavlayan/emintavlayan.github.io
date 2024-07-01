@@ -115,12 +115,13 @@
         }
 
         function applyFilters() {
-            const pItems = document.querySelectorAll('.wrapper section > p');
-            const h1Items = document.querySelectorAll('.wrapper section > h1');
-            const h2Items = document.querySelectorAll('.wrapper section > h2');
-            const h3Items = document.querySelectorAll('.wrapper section > h3');
+            // const pItems = document.querySelectorAll('.wrapper section > p');
+            // const h1Items = document.querySelectorAll('.wrapper section > h1');
+            // const h2Items = document.querySelectorAll('.wrapper section > h2');
+            // const h3Items = document.querySelectorAll('.wrapper section > h3');
             
-            const items = [...pItems, ...h1Items, ...h2Items, ...h3Items];
+            // const items = [...pItems, ...h1Items, ...h2Items, ...h3Items];
+            const items = document.querySelectorAll('.wrapper section > p');
 
             items.forEach(item => {
                 const shouldShow = shouldItemBeVisible(item);
@@ -143,6 +144,12 @@
                 item.classList.add('hidden');
             }
         }
+
+        const navUls = document.querySelectorAll('.wrapper nav > ul');
+          navUls.forEach(ul => {
+              ul.style.paddingLeft = '0';
+        });
+
       });
 
       </script>
