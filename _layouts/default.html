@@ -125,7 +125,7 @@
           // Function to apply filters to all items within the wrapper
           function applyFilters() {
               // Select all elements within the wrapper section
-              const items = document.querySelectorAll('.wrapper section > *');
+              const items = document.querySelectorAll('.wrapper section').children;
   
               // Iterate over each item and determine its visibility
               items.forEach(item => {
