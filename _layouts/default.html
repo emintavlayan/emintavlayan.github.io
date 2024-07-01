@@ -76,64 +76,68 @@
       </footer>
     </div>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          // Function to check if a specific checkbox is checked
-          function isChecked(checkboxId) {
-              return document.getElementById(checkboxId).checked;
-          }
+      document.addEventListener('DOMContentLoaded', () => {
+        const state = initializeState();
 
-          // Determine if any checkboxes within a given group are checked
-          function anyChecked(selector) {
-              return document.querySelectorAll(selector + ' input[type="checkbox"]:checked').length > 0;
-          }
+        document.querySelectorAll('.newcheckbox').forEach(checkbox => {
+            checkbox.addEventListener('change', handleCheckboxChange);
+        });
 
-          // Update visibility of all elements within the 'wrapper' div based on the checkbox state
-          function updateVisibility() {
-              // Store boolean values for each checkbox
-              const isDailyChecked = isChecked('daily');
-              const isMonthlyChecked = isChecked('monthly');
-              const isYearlyChecked = isChecked('yearly');
-              const isCarmChecked = isChecked('carm');
-              const isOringChecked = isChecked('oring');
+        applyFilters();
 
-              console.log("Checkbox states - Daily: ", isDailyChecked, "Monthly: ", isMonthlyChecked, "Yearly: ", isYearlyChecked, "C-Arm: ", isCarmChecked, "O-Ring: ", isOringChecked);
+        function initializeState() {
+            const initialState = {};
+            document.querySelectorAll('.newcheckbox').forEach(checkbox => {
+                const group = checkbox.getAttribute('data-group');
+                if (!initialState[group]) {
+                    initialState[group] = new Set();
+                }
+            });
+            return initialState;
+        }
 
-              // Determine if any frequency or machine type checkboxes are checked
-              const anyFrequencyChecked = anyChecked('#frequency');
-              const anyMachineTypeChecked = anyChecked('#machine_type');
+        function handleCheckboxChange(event) {
+            const group = event.target.getAttribute('data-group');
+            const value = event.target.value;
+            const checked = event.target.checked;
 
-              // Filter all child elements of the wrapper div based on the checkboxes
-              document.querySelectorAll('.wrapper *').forEach(element => {
-                  const hasDaily = element.classList.contains('daily');
-                  const hasMonthly = element.classList.contains('monthly');
-                  const hasYearly = element.classList.contains('yearly');
-                  const hasCarm = element.classList.contains('carm');
-                  const hasOring = element.classList.contains('oring');
+            updateState(group, value, checked);
+            applyFilters();
+        }
 
-                  const showBasedOnFrequency = (hasDaily && isDailyChecked) || (hasMonthly && isMonthlyChecked) || (hasYearly && isYearlyChecked);
-                  const showBasedOnMachine = (hasCarm && isCarmChecked) || (hasOring && isOringChecked);
+        function updateState(group, value, checked) {
+            if (checked) {
+                state[group].add(value);
+            } else {
+                state[group].delete(value);
+            }
+        }
 
-                  // Determine visibility based on checkbox states
-                  const isVisible = (
-                      (showBasedOnFrequency || !anyFrequencyChecked) &&
-                      (showBasedOnMachine || !anyMachineTypeChecked)
-                  );
+        function applyFilters() {
+            const items = document.querySelectorAll('.wrapper p');
+            items.forEach(item => {
+                const shouldShow = shouldItemBeVisible(item);
+                updateItemVisibility(item, shouldShow);
+            });
+        }
 
-                  element.style.display = isVisible ? '' : 'none';
-              });
-          }
+        function shouldItemBeVisible(item) {
+            return Object.keys(state).every(group => {
+                const groupSet = state[group];
+                if (groupSet.size === 0) return true;
+                return [...groupSet].some(cls => item.classList.contains(cls));
+            });
+        }
 
-          // Attach event listeners to all checkboxes to update visibility on change
-          document.querySelectorAll('.newCheckbox-group input[type="checkbox"]').forEach(checkbox => {
-              checkbox.addEventListener('change', function() {
-                  console.log("Checkbox changed: ", checkbox.id, "New state: ", checkbox.checked);
-                  updateVisibility();
-              });
-          });
-      
-          // Initial visibility update on page load
-          updateVisibility();
+        function updateItemVisibility(item, shouldShow) {
+            if (shouldShow) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        }
       });
+
       </script>
       
     
