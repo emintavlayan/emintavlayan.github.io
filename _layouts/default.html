@@ -115,7 +115,7 @@
         }
 
         function applyFilters() {
-            const items = document.querySelectorAll('.wrapper nav > *, .wrapper section > * ');
+            const items = document.querySelectorAll('.wrapper section > p, .wrapper section > h1, .wrapper section > h2, .wrapper section > h3');
             items.forEach(item => {
                 const shouldShow = shouldItemBeVisible(item);
                 updateItemVisibility(item, shouldShow);
