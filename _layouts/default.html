@@ -1,109 +1,113 @@
 <!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html lang="{{ site.lang | default: " en-US" }}">
 
-{% seo %}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-    <!--[if lt IE 9]>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <script src="https://code.jquery.com/jquery-3.3.0.min.js"
+    integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
     <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    {% include head-custom.html %}
-  </head>
-  <body>
+  {% include head-custom.html %}
+</head>
 
-      <header>
-        <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-        <p>{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
-      </header>
+<body>
 
-      <div id="banner">
-        <span id="logo"></span>
+  <header>
+    <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+    <p>{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
+  </header>
 
-        <a href="{{ site.github.repository_url }}" class="button fork"><strong>View On GitHub</strong></a>
-        {% if site.show_downloads %}
-          <div class="downloads">
-            <span>Downloads:</span>
-            <ul>
-              <li><a href="{{ site.github.zip_url }}" class="button">ZIP</a></li>
-              <li><a href="{{ site.github.tar_url }}" class="button">TAR</a></li>
-            </ul>
-          </div>
-        {% endif %}
-      </div><!-- end banner -->
+  <div id="banner">
+    <span id="logo"></span>
 
-    <div class="wrapper">
-      <nav>
-        
-        <ul></ul>
-      </nav>
-      <section>
-        {{ content }}
-
-      </section>
-      <footer>
-        <div>
-          <div>Frequency:</div>
-          <div class="newCheckbox-group">
-              <input type="checkbox" id="daily" value="daily" class="newcheckbox" data-group="frequency">
-              <label for="daily">Daily</label>
-              <input type="checkbox" id="monthly" value="monthly" class="newcheckbox" data-group="frequency">
-              <label for="monthly">Monthly</label>
-              <input type="checkbox" id="yearly" value="yearly" class="newcheckbox" data-group="frequency">
-              <label for="yearly">Yearly</label>
-          </div>
-        </div>
-        <div>
-            <div>Machine Type:</div>
-            <div class="newCheckbox-group">
-                <input type="checkbox" id="carm" value="carm" class="newcheckbox" data-group="machine_type">
-                <label for="carm">C-Arm</label>
-                <input type="checkbox" id="oring" value="oring" class="newcheckbox" data-group="machine_type">
-                <label for="oring">O-Ring</label>
-            </div>
-        </div>
-      
-        
-        
-        {% if site.github.is_project_page %}
-          <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small></p>
-      </footer>
+    <a href="{{ site.github.repository_url }}" class="button fork"><strong>View On GitHub</strong></a>
+    {% if site.show_downloads %}
+    <div class="downloads">
+      <span>Downloads:</span>
+      <ul>
+        <li><a href="{{ site.github.zip_url }}" class="button">ZIP</a></li>
+        <li><a href="{{ site.github.tar_url }}" class="button">TAR</a></li>
+      </ul>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-    // Initialize the state object when the document is fully loaded
-    const state = initializeState();
+    {% endif %}
+  </div><!-- end banner -->
 
-    // Attach event listeners to all checkboxes
-    document.querySelectorAll('.newcheckbox').forEach(checkbox => {
+  <div class="wrapper">
+    <nav>
+
+      <ul></ul>
+    </nav>
+    <section>
+      {{ content }}
+
+    </section>
+    <footer>
+      <div>
+        <div>Frequency:</div>
+        <div class="newCheckbox-group">
+          <input type="checkbox" id="daily" value="daily" class="newcheckbox" data-group="frequency">
+          <label for="daily">Daily</label>
+          <input type="checkbox" id="monthly" value="monthly" class="newcheckbox" data-group="frequency">
+          <label for="monthly">Monthly</label>
+          <input type="checkbox" id="yearly" value="yearly" class="newcheckbox" data-group="frequency">
+          <label for="yearly">Yearly</label>
+        </div>
+      </div>
+      <div>
+        <div>Machine Type:</div>
+        <div class="newCheckbox-group">
+          <input type="checkbox" id="carm" value="carm" class="newcheckbox" data-group="machine_type">
+          <label for="carm">C-Arm</label>
+          <input type="checkbox" id="oring" value="oring" class="newcheckbox" data-group="machine_type">
+          <label for="oring">O-Ring</label>
+        </div>
+      </div>
+
+
+
+      {% if site.github.is_project_page %}
+      <p>Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+      {% endif %}
+      <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></small>
+      </p>
+    </footer>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize the state object when the document is fully loaded
+      const state = initializeState();
+
+      // Attach event listeners to all checkboxes
+      document.querySelectorAll('.newcheckbox').forEach(checkbox => {
         checkbox.addEventListener('change', handleCheckboxChange);
-    });
+      });
 
-    // Apply initial filters based on the default state
-    applyFilters();
+      // Apply initial filters based on the default state
+      applyFilters();
 
-    // Function to initialize the state object for all checkbox groups
-    function initializeState() {
+      // Function to initialize the state object for all checkbox groups
+      function initializeState() {
         const initialState = {};
         document.querySelectorAll('.newcheckbox').forEach(checkbox => {
-            const group = checkbox.getAttribute('data-group');
-            // Create a new set for each group if it doesn't already exist
-            if (!initialState[group]) {
-                initialState[group] = new Set();
-            }
+          const group = checkbox.getAttribute('data-group');
+          // Create a new set for each group if it doesn't already exist
+          if (!initialState[group]) {
+            initialState[group] = new Set();
+          }
         });
         return initialState; // Return the initialized state
-    }
+      }
 
-    // Function to handle changes to any checkbox
-    function handleCheckboxChange(event) {
+      // Function to handle changes to any checkbox
+      function handleCheckboxChange(event) {
         const group = event.target.getAttribute('data-group'); // Get the group of the changed checkbox
         const value = event.target.value; // Get the value of the changed checkbox
         const checked = event.target.checked; // Check if the checkbox is checked or unchecked
@@ -113,20 +117,20 @@
         // Update the state and apply filters based on the new state
         updateState(group, value, checked);
         applyFilters();
-    }
+      }
 
-    // Function to update the state object based on checkbox changes
-    function updateState(group, value, checked) {
+      // Function to update the state object based on checkbox changes
+      function updateState(group, value, checked) {
         if (checked) {
-            state[group].add(value); // Add the value to the group's set if checked
+          state[group].add(value); // Add the value to the group's set if checked
         } else {
-            state[group].delete(value); // Remove the value from the group's set if unchecked
+          state[group].delete(value); // Remove the value from the group's set if unchecked
         }
         console.log('Updated state:', state);
-    }
+      }
 
-    // Function to apply filters to all items within the wrapper
-    function applyFilters() {
+      // Function to apply filters to all items within the wrapper
+      function applyFilters() {
         // Select all elements within the wrapper section
         const items = Array.from(document.querySelector('.wrapper section').children);
 
@@ -134,61 +138,52 @@
 
         // Iterate over each item and determine its visibility
         items.forEach(item => {
-            const shouldShow = shouldItemBeVisible(item); // Check if the item should be visible
-            console.log(`Item ${item.outerHTML} should be ${shouldShow ? 'visible' : 'hidden'}`);
-            updateItemVisibility(item, shouldShow); // Update the item's visibility based on the result
+          const shouldShow = shouldItemBeVisible(item); // Check if the item should be visible
+          console.log(`Item ${item.outerHTML} should be ${shouldShow ? 'visible' : 'hidden'}`);
+          updateItemVisibility(item, shouldShow); // Update the item's visibility based on the result
         });
-    }
+      }
 
-    function shouldItemBeVisible(item) {
-    // Check every group in the state object
-    return Object.keys(state).every(group => {
-        const groupSet = state[group];
-        
-        // Debugging log
-        console.log(`Checking group: ${group}, state: ${Array.from(groupSet)}`);
+      function shouldItemBeVisible(item) {
+        // Check every group in the state object
+        return Object.keys(state).every(group => {
+          const groupSet = state[group];
 
-        // If no checkboxes are selected in the group, the item should be visible
-        if (groupSet.size === 0) return true;
+          // If no checkboxes are selected in the group, skip this group
+          if (groupSet.size === 0) return true;
 
-        // Check if the item has any class from the group's set
-        const itemHasGroupClass = Array.from(groupSet).some(cls => item.classList.contains(cls));
-        
-        // Debugging log
-        console.log(`Item ${item.outerHTML} has group class: ${itemHasGroupClass}`);
-        
-        // If the item doesn't have any relevant class, it should be visible
-        if (!itemHasGroupClass) return true;
+          // Check if the item has any class from the group's set
+          const itemHasGroupClass = Array.from(groupSet).some(cls => item.classList.contains(cls));
 
-        // If the item has a relevant class, check if it matches any selected value
-        const itemMatchesSelected = Array.from(groupSet).some(cls => item.classList.contains(cls));
+          // If the item has no relevant class for this group, skip this group
+          if (!itemHasGroupClass) return true;
 
-        // Debugging log
-        console.log(`Item ${item.outerHTML} matches selected value: ${itemMatchesSelected}`);
+          // If the item has a relevant class, check if it matches any selected value
+          return Array.from(groupSet).some(cls => item.classList.contains(cls));
+        });
+      }
 
-        return itemMatchesSelected;
-    });
-}
 
-    // Function to update the visibility of an item
-    function updateItemVisibility(item, shouldShow) {
+      // Function to update the visibility of an item
+      function updateItemVisibility(item, shouldShow) {
         if (shouldShow) {
-            item.classList.remove('hidden'); // Remove the 'hidden' class to show the item
+          item.classList.remove('hidden'); // Remove the 'hidden' class to show the item
         } else {
-            item.classList.add('hidden'); // Add the 'hidden' class to hide the item
+          item.classList.add('hidden'); // Add the 'hidden' class to hide the item
         }
-    }
+      }
 
-    // Additional styling for navigation unordered lists
-    const navUls = document.querySelectorAll('.wrapper nav > ul');
-    navUls.forEach(ul => {
+      // Additional styling for navigation unordered lists
+      const navUls = document.querySelectorAll('.wrapper nav > ul');
+      navUls.forEach(ul => {
         ul.style.paddingLeft = '0'; // Remove padding from unordered lists in the navigation
+      });
     });
-});
 
   </script>
-  
-      
-    
-  </body>
+
+
+
+</body>
+
 </html>
