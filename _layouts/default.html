@@ -115,7 +115,7 @@
         }
 
         function applyFilters() {
-            const items = document.querySelectorAll('.wrapper *');
+            const items = document.querySelectorAll('.wrapper p');
             items.forEach(item => {
                 const shouldShow = shouldItemBeVisible(item);
                 updateItemVisibility(item, shouldShow);
