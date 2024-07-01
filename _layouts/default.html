@@ -121,7 +121,11 @@
             // const h3Items = document.querySelectorAll('.wrapper section > h3');
             
             // const items = [...pItems, ...h1Items, ...h2Items, ...h3Items];
-            const items = document.querySelectorAll('.wrapper section > p');
+            //---
+            // const items = document.querySelectorAll('.wrapper section > p');
+            //---
+            const items = document.querySelectorAll('.wrapper section > *');
+
 
             items.forEach(item => {
                 const shouldShow = shouldItemBeVisible(item);
@@ -130,12 +134,17 @@
         }
 
         function shouldItemBeVisible(item) {
-            return Object.keys(state).every(group => {
-                const groupSet = state[group];
-                if (groupSet.size === 0) return true;
-                return [...groupSet].some(cls => item.classList.contains(cls));
-            });
+          return Object.keys(state).every(group => {
+              const groupSet = state[group];
+              if (groupSet.size === 0) return true;
+              
+              const itemHasGroupClass = [...groupSet].some(cls => item.classList.contains(cls));
+              if (!itemHasGroupClass) return true;
+              
+              return [...groupSet].some(cls => item.classList.contains(cls));
+          });
         }
+
 
         function updateItemVisibility(item, shouldShow) {
             if (shouldShow) {
