@@ -7,7 +7,7 @@ title: Medikal Fizik Dernegi - GG007
 ## **1.** Mekanik testler
 
 **Lazer kontrolu** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
-{: .daily .carm .oring}
+{: .carm .oring}
 
 **SSD kontrolu** Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies ante at dolor rhoncus pulvinar. Curabitur lorem mauris, hendrerit vitae feugiat a, tempus ac purus. 
 {: .daily .monthly .carm}
