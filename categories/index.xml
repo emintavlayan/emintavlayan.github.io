@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Emin Tavlayan</title>
-    <link>https://emintavlayan.com/categories/</link>
+    <link>https://emintavlayan.github.io/categories/</link>
     <description>Recent content in Categories on Emin Tavlayan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Dec 2025 22:44:45 +0300</lastBuildDate>
-    <atom:link href="https://emintavlayan.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://emintavlayan.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
-      <link>https://emintavlayan.com/categories/blog/</link>
+      <link>https://emintavlayan.github.io/categories/blog/</link>
       <pubDate>Thu, 25 Dec 2025 19:12:39 +0300</pubDate>
-      <guid>https://emintavlayan.com/categories/blog/</guid>
+      <guid>https://emintavlayan.github.io/categories/blog/</guid>
       <description></description>
     </item>
   </channel>

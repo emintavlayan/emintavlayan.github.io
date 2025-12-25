@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Functional on Emin Tavlayan</title>
-    <link>https://emintavlayan.com/tags/functional/</link>
+    <link>https://emintavlayan.github.io/tags/functional/</link>
     <description>Recent content in Functional on Emin Tavlayan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Dec 2025 22:44:45 +0300</lastBuildDate>
-    <atom:link href="https://emintavlayan.com/tags/functional/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://emintavlayan.github.io/tags/functional/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Inquiry-Guided Attention</title>
-      <link>https://emintavlayan.com/posts/inquiry-guided-attention/</link>
+      <link>https://emintavlayan.github.io/posts/inquiry-guided-attention/</link>
       <pubDate>Thu, 25 Dec 2025 19:12:39 +0300</pubDate>
-      <guid>https://emintavlayan.com/posts/inquiry-guided-attention/</guid>
+      <guid>https://emintavlayan.github.io/posts/inquiry-guided-attention/</guid>
       <description>&lt;h1 id=&#34;inquiry-guided-attention&#34;&gt;&#xA;  &lt;strong&gt;Inquiry-Guided Attention&lt;/strong&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#inquiry-guided-attention&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h3 id=&#34;a-language-for-staying-honest-with-experience-while-building-complex-things&#34;&gt;&#xA;  A language for staying honest with experience while building complex things&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#a-language-for-staying-honest-with-experience-while-building-complex-things&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;We’ve all tried task management systems.&lt;/p&gt;&#xA;&lt;p&gt;They promise clarity, progress, structure.&lt;br&gt;&#xA;But in the reality of complex work—research, engineering, regulated systems, long arcs of creation—these systems often become the very thing they were meant to resolve: a source of friction.&lt;/p&gt;&#xA;&lt;p&gt;At first, they help.&lt;br&gt;&#xA;Then something breaks.&lt;/p&gt;</description>
     </item>
   </channel>
