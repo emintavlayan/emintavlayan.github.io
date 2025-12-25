@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Inquiry-Guided Attention · Emin Tavlayan
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Emin Tavlayan">
+<meta name="description" content="
+  Inquiry-Guided Attention
+  
+    
+    Link to heading
+  
+
+
+  A language for staying honest with experience while building complex things
+  
+    
+    Link to heading
+  
+
+We’ve all tried task management systems.
+They promise clarity, progress, structure.
+But in the reality of complex work—research, engineering, regulated systems, long arcs of creation—these systems often become the very thing they were meant to resolve: a source of friction.
+At first, they help.
+Then something breaks.">
+<meta name="keywords" content="software, functional programming, medical physics, blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Inquiry-Guided Attention">
+  <meta name="twitter:description" content="Inquiry-Guided Attention Link to heading A language for staying honest with experience while building complex things Link to heading We’ve all tried task management systems.
+They promise clarity, progress, structure.
+But in the reality of complex work—research, engineering, regulated systems, long arcs of creation—these systems often become the very thing they were meant to resolve: a source of friction.
+At first, they help.
+Then something breaks.">
+
+<meta property="og:url" content="https://emintavlayan.com/posts/inquiry-guided-attention/">
+  <meta property="og:site_name" content="Emin Tavlayan">
+  <meta property="og:title" content="Inquiry-Guided Attention">
+  <meta property="og:description" content="Inquiry-Guided Attention Link to heading A language for staying honest with experience while building complex things Link to heading We’ve all tried task management systems.
+They promise clarity, progress, structure.
+But in the reality of complex work—research, engineering, regulated systems, long arcs of creation—these systems often become the very thing they were meant to resolve: a source of friction.
+At first, they help.
+Then something breaks.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-12-25T19:12:39+03:00">
+    <meta property="article:modified_time" content="2025-12-25T22:44:45+03:00">
+    <meta property="article:tag" content="Functional">
+    <meta property="article:tag" content="Software Development">
+
+
+
+
+<link rel="canonical" href="https://emintavlayan.com/posts/inquiry-guided-attention/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.4b392a85107b91dbdabc528edf014a6ab1a30cd44cafcd5325c8efe796794fca.css" integrity="sha256-SzkqhRB7kdvavFKO3wFKarGjDNRMr81TJcjv55Z5T8o=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://emintavlayan.com/">
+      Emin Tavlayan
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://emintavlayan.com/posts/inquiry-guided-attention/">
+              Inquiry-Guided Attention
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-12-25T19:12:39&#43;03:00">
+                December 25, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              8-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/blog/">Blog</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/functional/">Functional</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/software-development/">Software Development</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="inquiry-guided-attention">
+  <strong>Inquiry-Guided Attention</strong>
+  <a class="heading-link" href="#inquiry-guided-attention">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h3 id="a-language-for-staying-honest-with-experience-while-building-complex-things">
+  A language for staying honest with experience while building complex things
+  <a class="heading-link" href="#a-language-for-staying-honest-with-experience-while-building-complex-things">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>We’ve all tried task management systems.</p>
+<p>They promise clarity, progress, structure.<br>
+But in the reality of complex work—research, engineering, regulated systems, long arcs of creation—these systems often become the very thing they were meant to resolve: a source of friction.</p>
+<p>At first, they help.<br>
+Then something breaks.</p>
+<p>Not in the tools themselves, but in <strong>how they relate to attention</strong>.<br>
+Work starts to feel like obligation. Motivation dips. Guilt creeps in. Tasks pile up.</p>
+<p>That’s where this began.</p>
+<p>Not as a new productivity method. Not as a better framework.<br>
+But as a <strong>personal inquiry</strong> into how attention truly behaves when we are building something that matters.</p>
+<p>What follows is not a system.<br>
+It’s a language. A way to stay <strong>honest with experience</strong>—even as complexity grows.</p>
+<p>And one sentence that guards everything that follows:</p>
+<blockquote>
+<p><strong>The moment language starts commanding experience, understanding stops.</strong></p>
+</blockquote>
+<hr>
+<h2 id="why-this-exists">
+  Why This Exists
+  <a class="heading-link" href="#why-this-exists">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This text is not a productivity system.<br>
+It is not a framework, a method, or a workflow.</p>
+<p>It is an attempt to describe—accurately and without coercion—how meaningful work actually unfolds when attention is protected rather than managed.</p>
+<p>It exists because every task management system I tried eventually failed me.</p>
+<p>Not occasionally.<br>
+Not partially.<br>
+Consistently.</p>
+<p>Lists, milestones, sprints, roadmaps, “progress tracking”—all of them collapsed in the same way. At some point, resistance would appear. Not to the work itself, but to the <strong>being told what to do</strong>. Even when the voice doing the telling was my own, from the past.</p>
+<p>This failure led to a more honest question:</p>
+<blockquote>
+<p><em>Why do I act effortlessly when something has meaning, and resist the moment it becomes an obligation?</em></p>
+</blockquote>
+<p>That question stayed open for a long time.</p>
+<p>What followed was not a search for a better system, but an <strong>inquiry into how attention actually works</strong>.</p>
+<hr>
+<h2 id="the-realization-that-changed-everything">
+  The Realization That Changed Everything
+  <a class="heading-link" href="#the-realization-that-changed-everything">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The core realization was simple and uncomfortable:</p>
+<p>I do not function through obedience.</p>
+<p>Not to methodologies.<br>
+Not to plans.<br>
+Not even to my own earlier intentions.</p>
+<p>The moment work is framed as a command—<em>do this</em>, <em>finish that</em>, <em>make progress</em>—attention contracts. Effort appears. Guilt appears. Delay appears.</p>
+<p>But when something is <strong>seen clearly</strong>, action follows without effort.</p>
+<p>Not because of discipline.<br>
+Not because of motivation.<br>
+But because understanding itself moves.</p>
+<p>This is not philosophy.<br>
+It is observation.</p>
+<hr>
+<h2 id="from-tasks-to-inquiry">
+  From Tasks to Inquiry
+  <a class="heading-link" href="#from-tasks-to-inquiry">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Traditional work systems tend to assume:</p>
+<ul>
+<li>The future can be defined in advance</li>
+<li>Work can be decomposed ahead of time</li>
+<li>Progress is linear</li>
+<li>Completion is meaningful</li>
+<li>Effort is virtuous</li>
+</ul>
+<p>In my experience, these assumptions often collapse under the weight of complex work—<br>
+research, medical software, regulated systems, long-horizon engineering.</p>
+<p>They also tend to break down <strong>psychologically</strong> when the same person is both the commander and the commanded. What was meant to guide becomes a source of resistance.</p>
+<p>Inquiry-Guided Attention emerged as a way to <strong>replace commands with questions</strong>.</p>
+<p>Not questions to be answered quickly.<br>
+Questions to be <em>lived with</em>.</p>
+<hr>
+<h2 id="alignment-reality-before-intention">
+  Alignment: Reality Before Intention
+  <a class="heading-link" href="#alignment-reality-before-intention">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Before any work begins, <strong>reality already exists</strong>.</p>
+<p>In my case, the reality is this:<br>
+I am building a radiotherapy QA software company.</p>
+<p>Even before a single line of code, several things are already true:</p>
+<ul>
+<li>The software <strong>is subject to inspection</strong>.</li>
+<li>Results <strong>must be explainable</strong>.</li>
+<li>Actions <strong>must be traceable</strong>.</li>
+<li>Errors <strong>must be diagnosable</strong>.</li>
+<li>Clinical trust <strong>depends on transparency</strong>.</li>
+<li>The system <strong>must comply with MDR and other regulatory constraints</strong>.</li>
+</ul>
+<p>These are not goals.<br>
+They are not aspirations.</p>
+<p>They are <strong>facts</strong>.</p>
+<h3 id="alignment">
+  Alignment
+  <a class="heading-link" href="#alignment">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>An <strong>Alignment</strong> is a recognized constraint that reality will enforce whether or not it is acknowledged.</p>
+<p>Alignments often appear early as quiet inner recognitions:</p>
+<ul>
+<li>“This must withstand audit.”</li>
+<li>“This must not surprise me later.”</li>
+<li>“This must be explainable to someone else.”</li>
+</ul>
+<p>They may arise through visualization, imagination, or experience speaking without words. What matters is not <em>how</em> they arise, but that they describe <strong>what reality demands</strong>, not what I want.</p>
+<p>As work unfolds, alignments stop feeling like imagined outcomes and start functioning as <strong>structural constraints</strong>.</p>
+<p>Nothing is done <em>to</em> alignments.<br>
+Work naturally orients around them once they are clearly seen.</p>
+<hr>
+<h2 id="inquiry-questions-that-hold-attention">
+  Inquiry: Questions That Hold Attention
+  <a class="heading-link" href="#inquiry-questions-that-hold-attention">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Once alignments are present, <strong>inquiries naturally arise</strong>.</p>
+<p>An inquiry is not an intention.<br>
+It is not a task.<br>
+It is not a plan.</p>
+<p>It is an open question that attention rests in.</p>
+<p>Examples from my work included:</p>
+<ul>
+<li><em>What does traceability actually mean in a real QA system?</em></li>
+<li><em>Where does complexity genuinely come from in regulated software?</em></li>
+<li><em>How do assumptions break under inspection?</em></li>
+<li><em>Which abstractions reduce cognitive load, and which merely look elegant?</em></li>
+</ul>
+<p>These questions were not scheduled.<br>
+They were not assigned.</p>
+<p>They simply pulled attention.</p>
+<h3 id="inquiry-states">
+  Inquiry States
+  <a class="heading-link" href="#inquiry-states">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>An inquiry has only two states:</p>
+<ul>
+<li><strong>Open</strong> — attention continues to return</li>
+<li><strong>Settled</strong> — attention becomes quiet, for now</li>
+</ul>
+<p>Settled does not mean complete.<br>
+It means sufficient.</p>
+<p>A settled inquiry may reopen later without implying failure or regression.</p>
+<hr>
+<h2 id="findings-and-understanding">
+  Findings and Understanding
+  <a class="heading-link" href="#findings-and-understanding">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>As attention rests in an inquiry, <strong>findings</strong> appear.</p>
+<p>Findings are small, factual articulations of what is seen:</p>
+<ul>
+<li>“Traceability fails at boundaries, not in core logic.”</li>
+<li>“Most complexity comes from state transitions, not computation.”</li>
+<li>“Auditability is a property of system shape, not features.”</li>
+</ul>
+<p>Findings accumulate.</p>
+<p>Over time, something else forms.</p>
+<h3 id="understanding">
+  Understanding
+  <a class="heading-link" href="#understanding">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Understanding is not a single finding.<br>
+It is an integrated coherence that emerges gradually.</p>
+<p>For example:</p>
+<ul>
+<li>From many findings, an understanding formed that <strong>type systems can carry regulatory meaning</strong>, not just correctness.</li>
+<li>Another understanding formed that <strong>most QA failures originate in invisible assumptions, not algorithms</strong>.</li>
+</ul>
+<p>Understanding is felt before it is articulated.<br>
+Language catches up later.</p>
+<hr>
+<h2 id="attention-threads-what-actually-happened">
+  Attention Threads: What Actually Happened
+  <a class="heading-link" href="#attention-threads-what-actually-happened">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Work does not unfold cleanly from inquiry to insight.</p>
+<p>What actually unfolds is <strong>attention moving through time</strong>.</p>
+<h3 id="attention-thread">
+  Attention Thread
+  <a class="heading-link" href="#attention-thread">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>An attention thread is a chronological trace of lived work:</p>
+<ul>
+<li>Notes</li>
+<li>Code sketches</li>
+<li>Conversations</li>
+<li>Experiments</li>
+<li>Confusion</li>
+<li>Drift</li>
+<li>Clarity</li>
+</ul>
+<p>Attention threads are not optimized.<br>
+They are not curated.</p>
+<p>They describe reality as it occurred.</p>
+<p>An attention thread may relate to:</p>
+<ul>
+<li>One inquiry</li>
+<li>Multiple inquiries</li>
+<li>No inquiry at all</li>
+</ul>
+<p>This is not a flaw.<br>
+It is accuracy.</p>
+<hr>
+<h2 id="drift-is-not-a-problem">
+  Drift Is Not a Problem
+  <a class="heading-link" href="#drift-is-not-a-problem">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Attention wanders.</p>
+<p>In my work, attention often drifts:</p>
+<ul>
+<li>from clinical questions to type modeling</li>
+<li>from domain logic to naming</li>
+<li>from structure to doubt</li>
+<li>from focus to fatigue</li>
+</ul>
+<p>This drift is not corrected.</p>
+<p>It is <strong>noticed</strong>.</p>
+<p>Often, drift reveales a new inquiry that had not yet been named.</p>
+<hr>
+<h2 id="time-as-reflection-not-control">
+  Time as Reflection, Not Control
+  <a class="heading-link" href="#time-as-reflection-not-control">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Time is logged only at the level of attention threads.</p>
+<p>Not to optimize.<br>
+Not to evaluate.<br>
+Only to reflect.</p>
+<p>Looking back, patterns become visible:</p>
+<ul>
+<li>fragmentation</li>
+<li>sustained attention</li>
+<li>cognitive limits</li>
+<li>natural rhythms</li>
+</ul>
+<p>Recognition brings relief.</p>
+<p>Relief allowes attention to settle.</p>
+<hr>
+<h2 id="an-honest-walkthrough">
+  An Honest Walkthrough
+  <a class="heading-link" href="#an-honest-walkthrough">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This is not a methodology.<br>
+It is a way attention moves—when left honest, unforced, and open to reality.</p>
+<p>A typical day might unfold like this:</p>
+<p><strong>Morning</strong><br>
+An open inquiry quietly calls attention:<br>
+<em>Where does complexity genuinely arise in this system?</em></p>
+<p>No urgency. No checklist. Just a note—an articulation of contact with the question.<br>
+That was enough.</p>
+<p>Later, while reading a scientific article on fault tolerance in safety-critical systems, something clicks.<br>
+The framing resonates—complexity isn&rsquo;t where I expected it to be.<br>
+Findings emerge and are written down:</p>
+<ul>
+<li>“Most complexity surfaces at integration boundaries, not within components.”</li>
+<li>“Error handling logic often introduces more risk than it mitigates.”</li>
+</ul>
+<p>An attention thread has begun—not by planning, but by staying with the question long enough for reality to respond.</p>
+<p><strong>Midday</strong><br>
+The mind drifts. It’s not a failure—it’s movement.<br>
+Today, it wanders toward elegance in architecture.<br>
+In noticing the drift, something clarifies:<br>
+<em>Which abstractions reduce cognitive load, and which merely appear elegant?</em></p>
+<p>A new inquiry has emerged.<br>
+Not through planning—through contact with experience.</p>
+<p><strong>Afternoon</strong><br>
+The day fragments: meetings, reading, technical sketches, conversations.<br>
+Energy splinters across modes.<br>
+But beneath the surface, attention threads are forming.</p>
+<p>They are not neat.<br>
+They are not tracked.</p>
+<p>They are simply the shape of lived work:<br>
+confusion, emergence, attempts, revisions.</p>
+<p><strong>Evening</strong><br>
+Time is viewed in reflection—not as a metric, but as a mirror.<br>
+The fragmentation is still there. But now, it is <strong>seen</strong>.</p>
+<p>No judgment. No retroactive optimization.<br>
+Only acknowledgment of how attention danced.</p>
+<hr>
+<p>And then—days or weeks later—a shift.</p>
+<p>One inquiry feels settled.<br>
+Not finished. Not closed.<br>
+Just… quiet.</p>
+<p>Later, it may reopen. And when it does, it won’t mean regression.<br>
+It will mean the work is alive.</p>
+<hr>
+<p>Nothing is wasted.<br>
+Attention, when trusted, <strong>builds coherence in time</strong>.</p>
+<p>Findings emerge not through effort, but through staying close to what is real—what calls.<br>
+Creation doesn’t begin at the keyboard.<br>
+It begins in attention.</p>
+<hr>
+<h2 id="what-this-is-and-is-not">
+  What This Is (and Is Not)
+  <a class="heading-link" href="#what-this-is-and-is-not">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This approach is not about efficiency.<br>
+It is not about speed.<br>
+It is not about output.</p>
+<p>It is about <strong>staying honest with experience</strong> while building complex things.</p>
+<p>It replaces:</p>
+<ul>
+<li>commands with questions</li>
+<li>plans with perception</li>
+<li>effort with understanding</li>
+</ul>
+<hr>
+<h2 id="this-document-as-understanding">
+  This Document as Understanding
+  <a class="heading-link" href="#this-document-as-understanding">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This post is not an instruction to others.<br>
+It is an articulation of my understanding at this moment.</p>
+<p>This whole text itself is a result of the approach it describes.</p>
+<p>It emerged from this single inquiry:</p>
+<blockquote>
+<p><em>How can I work fluently, without guilt or blockage?</em></p>
+</blockquote>
+<p>That inquiry has settled, for now.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Emin Tavlayan 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
